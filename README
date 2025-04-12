@@ -6,19 +6,21 @@ Welcome to my data portfolio! Here I showcase selected projects where I applied 
 
 ## 📊 Data Analytics Projects
 
-| Project | Description |
-|--------|-------------|
+| Project                                | Description                                                                                                    |
+|----------------------------------------|----------------------------------------------------------------------------------------------------------------|
 | **Relax Inc – User Adoption Analysis** | Identified user adoption patterns using login behavior data. Defined "adopted users", engineered features, and built predictive models in Python. |
-| **Paid Media Performance Audit** | Analyzed paid campaigns and ROAS using Google Ads + GA4 data. Cleaned and modeled data in SQL and Python, and delivered actionable insights. |
+| **Paid Media Performance Audit**       | Analyzed paid campaigns and ROAS using Google Ads + GA4 data. Cleaned and modeled data in SQL and Python, and delivered actionable insights.       |
+
 
 ---
 
 ## 📈 Dashboards
 
-| Dashboard | Tools | Description |
-|-----------|-------|-------------|
-| **Marketing KPI Tracker** | Power BI | Created an interactive dashboard for marketing KPIs, including CPL, CTR, ROAS. Connected to SQL Server and automated refreshes. |
+| Dashboard                    | Tools           | Description                                                                                                  |
+|-----------------------------|------------------|--------------------------------------------------------------------------------------------------------------|
+| **Marketing KPI Tracker**   | Power BI         | Created an interactive dashboard for marketing KPIs, including CPL, CTR, ROAS. Connected to SQL Server and automated refreshes. |
 | **Google Analytics Dashboard** | Looker Studio | Designed a live dashboard for tracking web performance and user behavior, integrating GA4 data and conversion funnels. |
+
 
 ---
 
@@ -26,8 +28,8 @@ Welcome to my data portfolio! Here I showcase selected projects where I applied 
 
 - **Languages**: Python, SQL, DAX
 - **Data Viz**: Power BI, Google Looker Studio, Excel
-- **Analytics**: Google Analytics, Campaign Reporting, Attribution
-- **Concepts**: Data Cleaning, Feature Engineering, Predictive Modeling, A/B Testing
+- **Analytics**: Google Analytics, Campaign Reporting
+- **Concepts**: Data Cleaning, Feature Engineering, Predictive Modeling
 - **Soft Skills**: Communication, Critical Thinking, Data Storytelling
 
 ---
