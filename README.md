@@ -1,5 +1,7 @@
 # 🎯 João Paiva Carvalho – Data Portfolio
 
+<br><br>
+
 Welcome to my data portfolio! Here I showcase selected projects where I applied data analysis, reporting, dashboard creation and marketing insights to drive decision-making. I use tools such as **Python**, **SQL**, **Power BI**, **Looker Studio** and more.
 
 ---
