@@ -28,7 +28,6 @@ I'm passionate about using data to drive insights and decision-making, and I aim
   - Popular genres and ratings
   - Geographic breakdown of content
 
----
 
 ## 🛠️Skills
 - **Programming Languages**: Python, SQL
