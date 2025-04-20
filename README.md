@@ -32,7 +32,7 @@ I'm passionate about using data to drive insights and decision-making, and I aim
 
 ## 🛠️Skills
 - **Programming Languages**: Python, SQL
-- **Tools & Technologies**: Power BI, Google Looker Studio, Google Analytics, Excel
+- **Tools & Technologies**: Power BI, Google Looker Studio, Tableau, Google Analytics, Excel
 - **Data Science**: Data Preprocessing, Feature Engineering, Predictive Modeling, Data Visualization, Machine Learning (Decision Trees)
 
 ## 📬Contact Me
