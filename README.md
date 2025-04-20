@@ -11,6 +11,25 @@ I'm passionate about using data to drive insights and decision-making, and I aim
 - **Key Skills Used**: Data Cleaning, Feature Engineering, Decision Tree Classifier, Predictive Analytics, Python.
 - **Tools**: Python (Pandas, Scikit-learn)
 
+### [Google Trends Portugal Dashboard](https://public.tableau.com/views/GoogleTrendsDashboard/Painel1_1?:language=pt-BR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+- **Description**: Interactive dashboard visualizing the top trending search terms in Portugal over the past 7 days.
+- **Tools used**: Tableau, Excel
+- **Key Features**:
+  - KPIs for total volume, top trends, and top trending search
+  - Time-series chart showing daily volume distribution
+  - Treemap illustrating the percentage share of each trend
+ 
+### [Netflix Content Dashboard](https://lookerstudio.google.com/s/laonNBS0l6M)
+- **Description**: Explore the interactive dashboard analyzing Netflix’s global catalog
+- **Tools used**: Google Looker Studio, Google Sheet
+- **Key Features:**
+  - Title trends over time
+  - Movie vs TV Show distribution
+  - Popular genres and ratings
+  - Geographic breakdown of content
+
+---
+
 ## 🛠️Skills
 - **Programming Languages**: Python, SQL
 - **Tools & Technologies**: Power BI, Google Looker Studio, Google Analytics, Excel
