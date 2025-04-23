@@ -192,6 +192,7 @@ full episodes or long recordings.
 Genres like Hip Hop/Rap and Bossa Nova tend to have shorter average durations.
 
 Q8) How have sales developed over time?
+
 • Annually
 ```sql
 SELECT 
