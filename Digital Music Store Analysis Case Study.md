@@ -1,6 +1,6 @@
 # Digital Music Store Analysis Case Study
 
-## Objectives: 
+## Objectives
 Analyze data from a digital music store to:
   - Understand customer preferences
   - Track sales trends (by genre, artist, etc.)
