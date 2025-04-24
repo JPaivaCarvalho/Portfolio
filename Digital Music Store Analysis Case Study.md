@@ -37,7 +37,7 @@ Analyze data from a digital music store to:
 
 ## Key Questions and SQL Queries
 
-**Q1) What are the top-selling genres?** The lowest-selling genres?
+**Q1) What are the top-selling genres? The lowest-selling genres?**
 ```sql
 SELECT 
     g.Name AS Genre,
