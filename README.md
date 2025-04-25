@@ -5,7 +5,7 @@ I'm passionate about using data to drive insights and decision-making, and I aim
 
 ## 📊My Projects
 
-### [Digital Music Store Analysis](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Digital%20Music%20Store%20Analysis%20Case%20Study.md)
+### SQL, Excel, Power BI / [Digital Music Store Analysis](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Digital%20Music%20Store%20Analysis%20Case%20Study.md)
 - **Description**: This project focuses on analyzing data from a digital music store to uncover customer preferences, identify sales trends, and provide actionable insights for optimizing the music catalog. By leveraging SQL, I explored sales records, user ratings, and purchasing behavior across various genres and artists.
 - **Key Skills Used**: Data Analysis, SQL, Data Visualization, Reporting
 - **Tools**: SQL, Excel, Power BI
@@ -15,13 +15,13 @@ I'm passionate about using data to drive insights and decision-making, and I aim
   - Data-driven recommendations to optimize the catalog and improve sales
   - Visual dashboards and charts to support insights and facilitate decision-making
 
-### [Relax: Predicting User Adoption Takehome](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Relax_Predicting_User_Adoption_Takehome.ipynb)
+### Python / [Relax: Predicting User Adoption Takehome](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Relax_Predicting_User_Adoption_Takehome.ipynb)
 - **Description**: In this project, I am working on analyzing user adoption behavior for a fictional company, **Relax Inc.** The goal is to identify users who have adopted
   the platform based on login frequency and other factors. Using a **Decision Tree** model, I aim to predict whether a user will become an "adopted user".
 - **Key Skills Used**: Data Cleaning, Exploratory Data Analysis, Data Mining, Predictive Analytics.
 - **Tools**: Python.
 
-### [Google Trends Portugal Dashboard](https://public.tableau.com/views/GoogleTrendsDashboard/Painel2?:language=pt-BR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+### Tableau, Excel / [Google Trends Portugal Dashboard](https://public.tableau.com/views/GoogleTrendsDashboard/Painel2?:language=pt-BR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 - **Description**: Interactive dashboard visualizing the top trending search terms in Portugal over the past 7 days.
 - **Tools used**: Tableau, Excel
 - **Key Features**:
@@ -29,7 +29,7 @@ I'm passionate about using data to drive insights and decision-making, and I aim
   - Time-series chart showing daily volume distribution.
   - Treemap illustrating the percentage share of each trend.
  
-### [Netflix Content Dashboard](https://lookerstudio.google.com/s/laonNBS0l6M)
+### Google Looker Studio / [Netflix Content Dashboard](https://lookerstudio.google.com/s/laonNBS0l6M)
 - **Description**: Explore the interactive dashboard analyzing Netflix’s global catalog
 - **Tools**: Google Looker Studio, Google Sheet
 - **Key Features:**
