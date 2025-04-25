@@ -5,7 +5,7 @@ I'm passionate about using data to drive insights and decision-making, and I aim
 
 ## 📊My Projects
 
-### [Digital Music Store Analysis](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Digital%20Music%20Store%20Analysis%20Case%20Study.md) - (Currently in Progress)
+### [Digital Music Store Analysis](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Digital%20Music%20Store%20Analysis%20Case%20Study.md)
 - **Description**: This project focuses on analyzing data from a digital music store to uncover customer preferences, identify sales trends, and provide actionable insights for optimizing the music catalog. By leveraging SQL, I explored sales records, user ratings, and purchasing behavior across various genres and artists.
 - **Key Skills Used**: Data Analysis, SQL, Data Visualization, Reporting
 - **Tools**: SQL, Excel, Power BI
