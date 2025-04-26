@@ -11,6 +11,7 @@ Analyze data from a digital music store to:
   - Excel and [Power BI: Data Export and Visualization](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Digital%20Music%20Store%20Dashboard.pbix) **"Download Raw File"**
 
 ## Understand Dataset
+- Source: [Kaggle](https://www.kaggle.com/datasets/samaxtech/chinook-music-store-data)
 
 | Table                     | Description                                                          |
 |---------------------------|----------------------------------------------------------------------|
