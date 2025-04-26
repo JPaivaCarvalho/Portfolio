@@ -21,8 +21,7 @@ I'm passionate about using data to drive insights and decision-making, and I aim
 - **Key Skills Used**: Data Cleaning, Exploratory Data Analysis, Data Mining, Predictive Analytics.
 - **Tools**: Python.
 
-### Tableau, Excel / [Google Trends Portugal Dashboard](https://public.tableau.com/views/GoogleTrendsDashboard/Painel2?:language=pt-BR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-- **Description**: Interactive dashboard visualizing the top trending search terms in Portugal over the past 7 days.
+### Tableau, Excel / [Google Trends Portugal Dashboard](https://public.tableau.com/app/profile/jo.o.paiva.carvalho/viz/GoogleTrendsDashboardPortugal/Panel1)
 - **Tools used**: Tableau, Excel
 - **Key Features**:
   - KPIs for total volume, top trends, and top trending search.
