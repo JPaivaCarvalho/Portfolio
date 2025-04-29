@@ -1,8 +1,9 @@
 # Total Optimization Plan for the Google Merchandise Store
 
 ### Introduction
-• The objective is to increase online sales and improve the user experience on the website.
-• You must analyze, draw conclusions, and present an action plan based on data from the Google Analytics Demo Account.
+- The objective is to increase online sales and improve the user experience on the website.
+
+- You must analyze, draw conclusions, and present an action plan based on data from the Google Analytics Demo Account.
 
 ### Understand Dataset
 🔵 Date Range: From January 1st until today. **Why?**
@@ -26,19 +27,26 @@
 
 ### 1. Audience Analysis
 
-• Which two age groups generate the most revenue?
+🔵 **Demography**
+
+**- Which two age groups generate the most revenue?**
+
 ![imagem](https://github.com/user-attachments/assets/17a8422a-084e-4235-9d0f-79c13e6ef171)
 
 The two age groups generating the highest revenue are:
 25-34 years old, with a total revenue of $105,938.41.
 35-44 years old, with a total revenue of $64,671.15.
 
-• Gender: which one has the higher conversion rate?
+**- Gender: which one has the higher conversion rate?**
+
 ![imagem](https://github.com/user-attachments/assets/96e0b9c5-7414-47ff-84da-10586472b02e)
 
 Male users contributed to 35.21% of the total revenue, slightly outperforming female users who contributed 33.14%.
 
-• Which are the five countries with the most revenue?
+🔵 **Location**
+
+**- Which are the five countries with the most revenue?**
+
 ![imagem](https://github.com/user-attachments/assets/a9398bb6-7fcc-4752-828c-55b94b1c555d)
 
 The U.S. market is by far the most important, generating over 90% of the total revenue.
@@ -47,4 +55,28 @@ All other countries combined account for only about 7–8% of the total revenue.
 There are countries with high traffic but very low conversion rates and revenue. In particular, India, Philippines, and South Korea have a 
 relatively high number of users but contribute minimally to total revenue. This suggests that while these markets attract traffic, they do 
 not convert effectively, which could be due to factors such as purchasing power, language barriers, or product-market fit.
+
+🔵 **Devices**
+
+**- Desktop, Mobile, or Tablet: where is the conversion rate better? And the average revenue?**
+
+Conversion rate (Key events: purchase): the conversion is represented in the 'Key events – purchase' column. 
+The best conversion rate (in terms of purchase volume) comes from Desktop, with more than 90% of the conversions.
+
+![imagem](https://github.com/user-attachments/assets/2dbd7567-7151-47a0-94fc-2ddf5b942c61)
+
+Average revenue by device
+
+![imagem](https://github.com/user-attachments/assets/e49ab0c0-5408-43cb-ab65-8163dec337bb)
+
+
+| Device  | Revenue       | Active Users  | Revenue per User (approx.)  |
+|---------|---------------|---------------|-----------------------------|
+| Desktop | $526,425.62   | 115,897       | ~$4.54                      |
+| Mobile  | $25,624.76    | 44,822        | ~$0.57                      |
+| Tablet  | $1,236.86     | 2,256         | ~$0.55                      |
+
+Desktop also has the highest average revenue per user.
+
+
 
