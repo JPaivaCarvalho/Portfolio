@@ -2,7 +2,7 @@
 
 ### Introduction
   - The objective is to increase online sales and improve the user experience on the website.
-  - You must analyze, draw conclusions, and present an action plan based on data from the Google Analytics Demo Account.
+  - We must analyze, draw conclusions, and present an action plan based on data from the Google Analytics Demo Account.
 
 ### Understand Dataset
 🔵 Date Range: From January 1st until today. **Why?**
