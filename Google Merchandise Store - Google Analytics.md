@@ -5,7 +5,7 @@
   - We must analyze, draw conclusions, and present an action plan based on data from the Google Analytics Demo Account.
 
 ### Understand Dataset
-🔵 Date Range: From January 1st until today. **Why?**
+🔵 Date Range: From January 1st until 27th April 2025. **Why?**
   - Recent data → I get an up-to-date view of user behavior.
   - Sufficient volume → There is enough traffic and conversions for the analysis to be statistically meaningful.
   - Campaigns and seasonality → I can detect the impact of special periods (e.g., Christmas, sales, etc.).
