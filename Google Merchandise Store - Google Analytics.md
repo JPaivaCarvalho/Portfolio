@@ -159,3 +159,51 @@ The choice of these product pages is due to them being the pages with the most t
 🔵 **Landing Pages**
 
 **- What are the top 3 landing pages?**
+
+![imagem](https://github.com/user-attachments/assets/ecfa6434-8b96-4387-b012-d2a43fb0335c)
+
+If we exclude the item '(not set)' (since it's technically invalid as an entry page), the true top 3 real landing pages are:
+1. /
+2. /canada
+3. /shop/lifestyle/bags
+
+**- Do these pages have a good conversion rate?**
+
+1. / (Homepage)
+Conversion Rate: 1.18%
+Above the overall average (1.12%)
+Interpretation: The homepage has a good conversion rate, especially considering the high volume of sessions (168k). It works well as an entry point for conversion.
+
+2. /canada
+Conversion Rate: 0.31%
+Well below the average
+Interpretation: This page has low conversion performance.
+
+3. /shop/lifestyle/bags
+Conversion Rate: 0.49%
+Below the average
+Interpretation: Although not as weak as the Canada page, this page also has a conversion rate below average. With 5,000 sessions, it is worth optimizing it.
+
+### 4. Funnel and Conversions
+
+🔵 **E-commerce Overview**
+
+**- What is the overall conversion rate?**
+
+Total buyers: 2.9K
+Total sessions: 293,169 sessions
+Estimated conversion rate calculation: Conversion rate = 2,900 buyers / 293,169 sessions ≈ 0.99% 
+
+**- What is the average order value?**
+
+Total revenue: $553,000
+Purchases: 2,900
+AOV = 553,000 / 2,900 ≈ $190.34 AOV = 2,900 / 553,000 ≈ $190.34
+
+🔵 **Checkout Funnel**
+
+**- At which step of the checkout do most users abandon?**
+![imagem](https://github.com/user-attachments/assets/288df90a-f1d8-452c-b9a9-7fe555b0f94d)
+
+
+**- Is there any product that is abandoned more frequently in the cart?**
