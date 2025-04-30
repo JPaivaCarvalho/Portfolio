@@ -5,6 +5,15 @@ I'm passionate about using data to drive insights and decision-making, and I aim
 
 ## 📊My Projects
 
+### Google Analytics / [Google E-Commerce Store](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Google%20Merchandise%20Store%20-%20Google%20Analytics.md)
+- **Description**: In this project, I analyzed e-commerce data using Google Analytics 4 to assess user behavior across landing pages, product performance, and the checkout funnel. By exploring key metrics such as purchase conversion rate, cart abandonment, and funnel drop-off points, I identified friction areas in the customer journey and proposed data-driven strategies to increase conversions.
+- **Key Skills Used**: Data Interpretation
+- **Tools**: Google Analytics 4
+- **Key Features**:
+  - Identified a high checkout abandonment rate at the payment stage and proposed concrete UX and payment method improvements.
+  - Analyzed product-level cart abandonment rates, highlighting high-interest items like Google Stickers with low conversion follow-through.
+  - Evaluated landing page performance, revealing underperforming pages.
+
 ### SQL, Excel, Power BI / [Digital Music Store Analysis](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Digital%20Music%20Store%20Analysis%20Case%20Study.md)
 - **Description**: This project focuses on analyzing data from a digital music store to uncover customer preferences, identify sales trends, and provide actionable insights for optimizing the music catalog. By leveraging SQL, I explored sales records, user ratings, and purchasing behavior across various genres and artists.
 - **Key Skills Used**: Data Analysis, SQL, Data Visualization.
