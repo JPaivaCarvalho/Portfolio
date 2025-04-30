@@ -8,7 +8,7 @@ Analyze data from a digital music store to:
 
 ## Tools
   - SQL Server Management Studio 20 - SQL for data extraction and analysis
-  - Excel and [Power BI: Data Export and Visualization](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Digital%20Music%20Store%20Dashboard.pbix) **"Download Raw File"**
+  - Excel and [Power BI: Data Export and Visualization](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Digital%20Music%20Store%20Analysis/Digital%20Music%20Store%20Dashboard.pbix) **"Download Raw File"**
 
 ## Understand Dataset
 - Source: [Kaggle](https://www.kaggle.com/datasets/samaxtech/chinook-music-store-data)
