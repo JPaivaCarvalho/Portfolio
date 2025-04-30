@@ -112,9 +112,11 @@ irrelevant traffic.
 **- Is there any specific campaign (utm_campaign) that has generated a lot of traffic? Did that traffic convert well?**
 
 The campaign with the highest UTM-tagged traffic was [Evergreen] Merch Store US and CA | Search, with 10,925 sessions. 
+
 ![imagem](https://github.com/user-attachments/assets/45e36f6e-b90d-45ba-b919-5e29c266b5f1)
 
 It also showed strong performance, with a session key event rate of 35.65% and generated approximately $11,860 in revenue.
+
 ![imagem](https://github.com/user-attachments/assets/b27c913b-194b-4a14-a188-8a27ccbe3575)
 
 
@@ -143,12 +145,15 @@ In the case of the Google Merchandise Store's e-commerce experience, it was nece
 Three funnels of Explorations were defined. They only differ in the Product Page.
 
   **Product Page '/shop/apparel'**
+  
   ![imagem](https://github.com/user-attachments/assets/f6af257e-41ef-41a9-b95c-e9cc436f684a)
 
   **Product Page '/shop/apparel/mens'**
+  
   ![imagem](https://github.com/user-attachments/assets/056c9283-5bfe-476c-9c79-4da77d11e26e)
 
   **Product Page '/shop/new'**
+  
   ![imagem](https://github.com/user-attachments/assets/a30b69f4-a89a-4640-9d2f-ed0c6fe060c5)
 
 The choice of these product pages is due to them being the pages with the most traffic. As we can observe from the last stage 
@@ -203,7 +208,55 @@ AOV = 553,000 / 2,900 ≈ $190.34 AOV = 2,900 / 553,000 ≈ $190.34
 🔵 **Checkout Funnel**
 
 **- At which step of the checkout do most users abandon?**
+
 ![imagem](https://github.com/user-attachments/assets/288df90a-f1d8-452c-b9a9-7fe555b0f94d)
 
 
 **- Is there any product that is abandoned more frequently in the cart?**
+
+![imagem](https://github.com/user-attachments/assets/a54b28a3-7c60-4366-8b09-adc4ae79ad85)
+
+**Cart abandonment rate = (Items added to cart - Items purchased) / Items added to cart × 100**
+
+Considering the most added products to the cart:
+  - Google Sticker: Cart abandonment rate = (7 253 - 2 197) / 7 253 × 100 = 69,79%
+  - Google Cloud Sticker: Cart abandonment rate = (5 912 - 1 538) / 5 912 × 100 = 73,98%
+  - Google Campus Bike: Cart abandonment rate = (3 505 - 1 538) / 3 505 × 100 = 56,12%
+
+Google Cloud Sticker has the highest cart abandonment rate, meaning many users add it but don’t complete the 
+purchase.
+
+### 5. Conclusions and Strategies
+
+🔵 **Identified Issues on the Website**
+
+  - High abandonment at checkout (last step). 36.3% of users drop off between 'Add payment' and 'Purchase'.
+    This is the largest point of abandonment in the funnel.
+
+  - High cart abandonment rates for popular products: Example: Google Cloud Sticker (74%) and Google Sticker (70%).
+    Inexpensive products, but with high purchase intent that is not completed.
+
+  - Low conversion on entry pages: example - /canada has only a 0.31% conversion rate.
+    Despite having significant traffic, it converts poorly.
+
+🔵 **Solutions to Increase Conversions**
+
+  - Simplify payment forms. Include fast methods (e.g., PayPal, Apple Pay, MBWay).
+    Show security badges (SSL, 'Secure Purchase').
+
+  - Recover abandoned carts with remarketing: send automated emails with:
+    Forgotten items. Incentives (e.g., 10% discount or free shipping). Use dynamic ads on
+    social media (e.g., Meta Ads, Google Display).
+
+  - Optimize low-performing landing pages: For "/canada"
+    Check if the content matches the user's intent. Add stronger calls to action (CTAs). Review mobile experience
+    and loading times.
+
+🔵 **Ideal Target Audience**
+
+  - Young professionals (25–34 years old), tech-savvy, with an interest in Google and
+    customizable products.
+
+  - They may impulsively buy gadgets and small accessories. They are active on social media and sensitive to quick
+    promotions. They have high affinity for minimalist design and functional products.
+    
