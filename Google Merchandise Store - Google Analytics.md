@@ -25,7 +25,7 @@
 
 🔵 Data source
   - Indicates that the report is using both intraday and daily data.
-  - "Intraday" means it also shows data from the current day, even if the day’s data is not yet complete.
+  - "Intraday" means it also shows data from the current day, even if the day’s data is not yet complete.<br><br>
 
 ### 1. Audience Analysis
 
@@ -78,7 +78,7 @@ Average revenue by device
 | Mobile  | $25,624.76    | 44,822        | ~$0.57                      |
 | Tablet  | $1,236.86     | 2,256         | ~$0.55                      |
 
-Desktop also has the highest average revenue per user.<br>  
+Desktop also has the highest average revenue per user.<br><br>  
 
 
 ### 2. Acquisition Analysis
@@ -121,7 +121,7 @@ The campaign with the highest UTM-tagged traffic was [Evergreen] Merch Store US 
 It also showed strong performance, with a session key event rate of 35.65% and generated approximately $11,860 in revenue.
 
 ![imagem](https://github.com/user-attachments/assets/b27c913b-194b-4a14-a188-8a27ccbe3575)
-
+<br><br>
 
 ### 3. Behaviour Analysis
 
@@ -190,7 +190,7 @@ Interpretation: This page has low conversion performance.
 3. /shop/lifestyle/bags
 Conversion Rate: 0.49%
 Below the average
-Interpretation: Although not as weak as the Canada page, this page also has a conversion rate below average. With 5,000 sessions, it is worth optimizing it.
+Interpretation: Although not as weak as the Canada page, this page also has a conversion rate below average. With 5,000 sessions, it is worth optimizing it.<br><br>
 
 ### 4. Funnel and Conversions
 
@@ -227,7 +227,7 @@ Considering the most added products to the cart:
   - Google Campus Bike: Cart abandonment rate = (3 505 - 1 538) / 3 505 × 100 = 56,12%
 
 Google Cloud Sticker has the highest cart abandonment rate, meaning many users add it but don’t complete the 
-purchase.
+purchase.<br><br>
 
 ### 5. Conclusions and Strategies
 
