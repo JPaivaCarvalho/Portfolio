@@ -1,8 +1,11 @@
 # Total Optimization Plan for the Google Merchandise Store
 
+![imagem](https://github.com/user-attachments/assets/1069e3ab-a747-41a9-a149-db24ea1c4c73)
+
+
 ### Introduction
   - The objective is to increase online sales and improve the user experience on the website.
-  - We must analyze, draw conclusions, and present an action plan based on data from the Google Analytics Demo Account.
+  - We must analyze, draw conclusions, and present an action plan based on data from the [Google Analytics Demo Account](https://analytics.google.com/analytics/web/?utm_source=demoaccount&utm_medium=demoaccount&utm_campaign=demoaccount#/p213025502/reports/intelligenthome).
 
 ### Understand Dataset
 🔵 Date Range: From January 1st until 27th April 2025. **Why?**
