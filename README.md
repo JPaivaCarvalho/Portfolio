@@ -1,7 +1,7 @@
 # João Paiva Carvalho - Data Analytics Portfolio
 
 Welcome to my GitHub portfolio! Here, you will find a selection of projects showcasing my skills and experience in Data Analytics, Digital Marketing, and Programming. 
-I'm passionate about using data to drive insights and decision-making, and I aim to continue developing my expertise in this field.
+I am passionate about using data to drive insights and decision-making, and I aim to continue developing my expertise in this field.
 
 ## 📊My Projects
 
