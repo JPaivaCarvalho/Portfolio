@@ -124,10 +124,43 @@ FROM (
 ) AS sub
 GROUP BY Country
 ORDER BY Total DESC;
-
 ```
 
 ![imagem](https://github.com/user-attachments/assets/12f3a1b7-0155-40f0-afc8-d3d062f1a2ba)
+
+### 📊Race
+
+```sql
+SELECT 
+  CASE 
+    WHEN AnswerText IN ('White', 'Caucasian', 'European American') THEN 'White'
+    WHEN AnswerText IN ('Hispanic', 'White Hispanic') THEN 'Hispanic or Latino'
+    WHEN AnswerText = 'Black or African American' THEN 'Black or African American'
+    WHEN AnswerText = 'Asian' THEN 'Asian'
+    WHEN AnswerText = 'American Indian or Alaska Native' THEN 'American Indian or Alaska Native'
+    WHEN AnswerText = 'More than one of the above' THEN 'Multiracial or Other'
+    WHEN AnswerText = 'I prefer not to answer' THEN 'Prefer not to answer'
+    ELSE 'Invalid / Missing'
+  END AS Race,
+  COUNT(*) AS Total,
+  CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)) AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 89
+GROUP BY 
+  CASE 
+    WHEN AnswerText IN ('White', 'Caucasian', 'European American') THEN 'White'
+    WHEN AnswerText IN ('Hispanic', 'White Hispanic') THEN 'Hispanic or Latino'
+    WHEN AnswerText = 'Black or African American' THEN 'Black or African American'
+    WHEN AnswerText = 'Asian' THEN 'Asian'
+    WHEN AnswerText = 'American Indian or Alaska Native' THEN 'American Indian or Alaska Native'
+    WHEN AnswerText = 'More than one of the above' THEN 'Multiracial or Other'
+    WHEN AnswerText = 'I prefer not to answer' THEN 'Prefer not to answer'
+    ELSE 'Invalid / Missing'
+  END
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/af3ea24d-84d6-48e5-8e04-74642c2ea6bf)
 
 
 ## 🔵Job Information
