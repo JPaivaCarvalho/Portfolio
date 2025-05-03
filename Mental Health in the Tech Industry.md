@@ -106,6 +106,8 @@ ORDER BY Total DESC;
 
 ### 📊Country
 
+#### Live in
+
 ```sql
 SELECT 
   Country,
@@ -128,6 +130,22 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/12f3a1b7-0155-40f0-afc8-d3d062f1a2ba)
 
+#### Work in
+
+```sql
+SELECT 
+  AnswerText AS Country,
+  COUNT(*) AS Total,
+  CONCAT(CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)), ' %') AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 50
+GROUP BY AnswerText
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/8d54106c-9738-41d0-a5d7-86d1412cb765)
+
+
 ### 📊Race
 
 ```sql
@@ -141,9 +159,9 @@ SELECT
     WHEN AnswerText = 'More than one of the above' THEN 'Multiracial or Other'
     WHEN AnswerText = 'I prefer not to answer' THEN 'Prefer not to answer'
     ELSE 'Invalid / Missing'
-  END AS Race,
+  END AS CleanedRace,
   COUNT(*) AS Total,
-  CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)) AS Percentage
+  CONCAT(CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)), ' %') AS Percentage
 FROM dbo.Answer
 WHERE QuestionID = 89
 GROUP BY 
@@ -160,7 +178,7 @@ GROUP BY
 ORDER BY Total DESC;
 ```
 
-![imagem](https://github.com/user-attachments/assets/af3ea24d-84d6-48e5-8e04-74642c2ea6bf)
+![imagem](https://github.com/user-attachments/assets/55ad9f35-9889-491f-8a48-5e80405bd0c5)
 
 
 ## 🔵Job Information
@@ -217,11 +235,9 @@ FROM (
 ) AS sub
 GROUP BY TechRoleCategory
 ORDER BY Total DESC;
-
 ```
 
 ![imagem](https://github.com/user-attachments/assets/46afed9e-4ef0-4876-a276-7d262ed52f37)
-
 
 
 ### 📊Self-Employed - 'Yes' or 'No'
@@ -248,7 +264,6 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/d1c2d7dd-1a81-4cef-b4aa-4485ec9cc869)
 
-
 ### 📊Company Size
 
 ```sql
@@ -271,3 +286,19 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/7355cdd7-6acd-478e-a89b-145af6514fb5)
 
+## 🔵Diagnosis, Treatment, and Condition
+Covers personal experiences with mental health issues, including diagnosis, treatment, and how these conditions affect work.
+
+
+
+## 🔵Employer Support and Benefits
+Focuses on the resources, benefits, and support systems that companies offer for mental health.
+
+## 🔵Communication and Comfort Discussing Mental Health
+Evaluates how comfortable employees feel discussing mental health with coworkers, supervisors, or during job interviews.
+
+## 🔵Stigma and Perceived Consequences
+Addresses fears of negative outcomes, stigma in the workplace, and how mental health disclosures may affect careers.
+
+## 🔵Open-Ended Responses and Comments
+Contains qualitative feedback and personal reflections, providing deeper insight into individual experiences and suggestions.
