@@ -43,7 +43,8 @@ GROUP BY CAST(a.AnswerText AS INT)
 ORDER BY Age;
 ```
 
-![imagem](https://github.com/user-attachments/assets/be66447b-fff6-41bb-93c9-b11def446b05)  ![imagem](https://github.com/user-attachments/assets/51d96168-b51f-43af-b4a8-d5b854146227)
+![imagem](https://github.com/user-attachments/assets/be66447b-fff6-41bb-93c9-b11def446b05) ![imagem](https://github.com/user-attachments/assets/1f3a2037-5534-4b76-9cd7-eadd1691ce76)
+ 
 
 Média de idade por ano da survey                                      
 ```sql
@@ -100,3 +101,84 @@ ORDER BY Total DESC;
 
 ### 📊Country
 
+```sql
+SELECT 
+  CASE
+    WHEN LOWER(a.AnswerText) IN ('united states', 'usa', 'us') THEN 'United States of America'
+    WHEN LOWER(a.AnswerText) = 'uk' THEN 'United Kingdom'
+    WHEN LOWER(a.AnswerText) = '-1' OR a.AnswerText IS NULL OR a.AnswerText LIKE '%other%' THEN 'Other / Unknown'
+    ELSE a.AnswerText
+  END AS Country,
+  COUNT(*) AS Total
+FROM dbo.Answer a
+WHERE a.QuestionID = 3  -- supondo que QID=3 seja "What country do you live in?"
+GROUP BY 
+  CASE
+    WHEN LOWER(a.AnswerText) IN ('united states', 'usa', 'us') THEN 'United States of America'
+    WHEN LOWER(a.AnswerText) = 'uk' THEN 'United Kingdom'
+    WHEN LOWER(a.AnswerText) = '-1' OR a.AnswerText IS NULL OR a.AnswerText LIKE '%other%' THEN 'Other / Unknown'
+    ELSE a.AnswerText
+  END
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/03c5743f-1aed-4c65-b280-c3eff5e97585)
+
+## 🔵Job Information
+
+### 📊Work Remotely
+
+```sql
+SELECT 
+  a.AnswerText AS WorkRemotely,
+  COUNT(*) AS Total
+FROM dbo.Answer a
+WHERE a.QuestionID = 118  -- substituir pelo ID real
+GROUP BY a.AnswerText
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/ff4e8b10-3a69-4e16-be5c-098a208e747d)
+
+
+### 📊Work Position
+
+```sql
+SELECT 
+  a.AnswerText AS PositionType,
+  COUNT(*) AS Total
+FROM dbo.Answer a
+WHERE a.QuestionID = 117  -- substituir pelo ID real
+GROUP BY a.AnswerText
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/0773ab34-3bb7-4b99-b0ff-8f109176c433)
+
+### 📊Tech Role - 'Yes' or 'No'
+
+```sql
+SELECT 
+  CASE 
+    WHEN a.AnswerText = '1' THEN 'Yes - Tech Role'
+    WHEN a.AnswerText = '0' THEN 'No - Non-Tech Role'
+    WHEN a.AnswerText = '-1' THEN 'Unknown / Not Answered'
+    ELSE 'Other'
+  END AS TechRoleCategory,
+  COUNT(*) AS Total
+FROM dbo.Answer a
+WHERE a.QuestionID = 13
+GROUP BY 
+  CASE 
+    WHEN a.AnswerText = '1' THEN 'Yes - Tech Role'
+    WHEN a.AnswerText = '0' THEN 'No - Non-Tech Role'
+    WHEN a.AnswerText = '-1' THEN 'Unknown / Not Answered'
+    ELSE 'Other'
+  END
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/22b5b05f-2eb9-4ef0-ae27-f1b660b0fe16)
+
+
+### 📊Self-Employed - 'Yes' or 'No'
