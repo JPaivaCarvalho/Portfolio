@@ -34,17 +34,22 @@ Data cleaning was performed, considering valid age responses between 18 (the leg
 
 ```sql
 SELECT 
-    CAST(a.AnswerText AS INT) AS Age,
-    COUNT(*) AS Total
-FROM dbo.Answer a
-WHERE a.QuestionID = 1
-  AND TRY_CAST(a.AnswerText AS INT) BETWEEN 18 AND 70
-GROUP BY CAST(a.AnswerText AS INT)
-ORDER BY Age;
+  Age,
+  COUNT(*) AS Total,
+  FORMAT(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 'N1') + '%' AS Percentage
+FROM (
+  SELECT 
+    CAST(a.AnswerText AS INT) AS Age
+  FROM dbo.Answer a
+  WHERE a.QuestionID = 1
+    AND TRY_CAST(a.AnswerText AS INT) BETWEEN 18 AND 70
+) AS sub
+GROUP BY Age
+ORDER BY Percentage DESC;
 ```
 
-![imagem](https://github.com/user-attachments/assets/be66447b-fff6-41bb-93c9-b11def446b05) ![imagem](https://github.com/user-attachments/assets/1f3a2037-5534-4b76-9cd7-eadd1691ce76)
- 
+![imagem](https://github.com/user-attachments/assets/c5046c24-8360-46ef-9abb-cfd42eb42e9c)   ![imagem](https://github.com/user-attachments/assets/a274720e-4af8-4c11-b219-f10f07256384)
+
 
 Média de idade por ano da survey                                      
 ```sql
@@ -76,53 +81,54 @@ Agrupou-se a lista de respostas em grupos padronizados de géneros.
 
 ```sql
 SELECT 
-  CASE
-    WHEN LOWER(a.AnswerText) LIKE '%male%' AND NOT LOWER(a.AnswerText) LIKE '%female%' THEN 'Male'
-    WHEN LOWER(a.AnswerText) LIKE '%female%' AND NOT LOWER(a.AnswerText) LIKE '%male%' THEN 'Female'
-    WHEN LOWER(a.AnswerText) LIKE '%non%' OR LOWER(a.AnswerText) LIKE '%genderqueer%' OR LOWER(a.AnswerText) LIKE '%fluid%' THEN 'Non-binary / Genderqueer'
-    WHEN LOWER(a.AnswerText) LIKE '%trans%' THEN 'Transgender'
-    ELSE 'Other / Unspecified'
-  END AS Gender_Group,
-  COUNT(*) AS Total
-FROM dbo.Answer a
-WHERE a.QuestionID = 2
-GROUP BY
-  CASE
-    WHEN LOWER(a.AnswerText) LIKE '%male%' AND NOT LOWER(a.AnswerText) LIKE '%female%' THEN 'Male'
-    WHEN LOWER(a.AnswerText) LIKE '%female%' AND NOT LOWER(a.AnswerText) LIKE '%male%' THEN 'Female'
-    WHEN LOWER(a.AnswerText) LIKE '%non%' OR LOWER(a.AnswerText) LIKE '%genderqueer%' OR LOWER(a.AnswerText) LIKE '%fluid%' THEN 'Non-binary / Genderqueer'
-    WHEN LOWER(a.AnswerText) LIKE '%trans%' THEN 'Transgender'
-    ELSE 'Other / Unspecified'
-  END
+  Gender_Group,
+  COUNT(*) AS Total,
+  FORMAT(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 'N1') + '%' AS Percentage
+FROM (
+  SELECT 
+    CASE
+      WHEN LOWER(a.AnswerText) LIKE '%male%' AND NOT LOWER(a.AnswerText) LIKE '%female%' THEN 'Male'
+      WHEN LOWER(a.AnswerText) LIKE '%female%' AND NOT LOWER(a.AnswerText) LIKE '%male%' THEN 'Female'
+      WHEN LOWER(a.AnswerText) LIKE '%non%' OR LOWER(a.AnswerText) LIKE '%genderqueer%' OR LOWER(a.AnswerText) LIKE '%fluid%' THEN 'Non-binary / Genderqueer'
+      WHEN LOWER(a.AnswerText) LIKE '%trans%' THEN 'Transgender'
+      ELSE 'Other / Unspecified'
+    END AS Gender_Group
+  FROM dbo.Answer a
+  WHERE a.QuestionID = 2
+) AS sub
+GROUP BY Gender_Group
 ORDER BY Total DESC;
+
 ```
 
-![imagem](https://github.com/user-attachments/assets/e1182092-a3eb-4c4d-ab08-79adabe3b017)
+![imagem](https://github.com/user-attachments/assets/d48c6bc7-b3f3-4d4b-8922-a96bd4af9186)
+
 
 ### 📊Country
 
 ```sql
 SELECT 
-  CASE
-    WHEN LOWER(a.AnswerText) IN ('united states', 'usa', 'us') THEN 'United States of America'
-    WHEN LOWER(a.AnswerText) = 'uk' THEN 'United Kingdom'
-    WHEN LOWER(a.AnswerText) = '-1' OR a.AnswerText IS NULL OR a.AnswerText LIKE '%other%' THEN 'Other / Unknown'
-    ELSE a.AnswerText
-  END AS Country,
-  COUNT(*) AS Total
-FROM dbo.Answer a
-WHERE a.QuestionID = 3  -- supondo que QID=3 seja "What country do you live in?"
-GROUP BY 
-  CASE
-    WHEN LOWER(a.AnswerText) IN ('united states', 'usa', 'us') THEN 'United States of America'
-    WHEN LOWER(a.AnswerText) = 'uk' THEN 'United Kingdom'
-    WHEN LOWER(a.AnswerText) = '-1' OR a.AnswerText IS NULL OR a.AnswerText LIKE '%other%' THEN 'Other / Unknown'
-    ELSE a.AnswerText
-  END
+  Country,
+  COUNT(*) AS Total,
+  FORMAT(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 'N1') + '%' AS Percentage
+FROM (
+  SELECT 
+    CASE
+      WHEN LOWER(a.AnswerText) IN ('united states', 'usa', 'us') THEN 'United States of America'
+      WHEN LOWER(a.AnswerText) = 'uk' THEN 'United Kingdom'
+      WHEN LOWER(a.AnswerText) = '-1' OR a.AnswerText IS NULL OR a.AnswerText LIKE '%other%' THEN 'Other / Unknown'
+      ELSE a.AnswerText
+    END AS Country
+  FROM dbo.Answer a
+  WHERE a.QuestionID = 3
+) AS sub
+GROUP BY Country
 ORDER BY Total DESC;
+
 ```
 
-![imagem](https://github.com/user-attachments/assets/03c5743f-1aed-4c65-b280-c3eff5e97585)
+![imagem](https://github.com/user-attachments/assets/12f3a1b7-0155-40f0-afc8-d3d062f1a2ba)
+
 
 ## 🔵Job Information
 
@@ -131,14 +137,15 @@ ORDER BY Total DESC;
 ```sql
 SELECT 
   a.AnswerText AS WorkRemotely,
-  COUNT(*) AS Total
+  COUNT(*) AS Total,
+  FORMAT(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 'N1') + '%' AS Percentage
 FROM dbo.Answer a
-WHERE a.QuestionID = 118  -- substituir pelo ID real
+WHERE a.QuestionID = 118
 GROUP BY a.AnswerText
 ORDER BY Total DESC;
 ```
 
-![imagem](https://github.com/user-attachments/assets/ff4e8b10-3a69-4e16-be5c-098a208e747d)
+![imagem](https://github.com/user-attachments/assets/8032142d-ee07-4104-bea7-19ec45bae603)
 
 
 ### 📊Work Position
@@ -146,39 +153,88 @@ ORDER BY Total DESC;
 ```sql
 SELECT 
   a.AnswerText AS PositionType,
-  COUNT(*) AS Total
+  COUNT(*) AS Total,
+  FORMAT(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 'N1') + '%' AS Percentage
 FROM dbo.Answer a
-WHERE a.QuestionID = 117  -- substituir pelo ID real
+WHERE a.QuestionID = 117
 GROUP BY a.AnswerText
 ORDER BY Total DESC;
 ```
 
-![imagem](https://github.com/user-attachments/assets/0773ab34-3bb7-4b99-b0ff-8f109176c433)
+![imagem](https://github.com/user-attachments/assets/c1cf1d11-7bb4-48a0-8f0f-16346f78f1e4)
+
 
 ### 📊Tech Role - 'Yes' or 'No'
 
 ```sql
 SELECT 
-  CASE 
-    WHEN a.AnswerText = '1' THEN 'Yes - Tech Role'
-    WHEN a.AnswerText = '0' THEN 'No - Non-Tech Role'
-    WHEN a.AnswerText = '-1' THEN 'Unknown / Not Answered'
-    ELSE 'Other'
-  END AS TechRoleCategory,
-  COUNT(*) AS Total
-FROM dbo.Answer a
-WHERE a.QuestionID = 13
-GROUP BY 
-  CASE 
-    WHEN a.AnswerText = '1' THEN 'Yes - Tech Role'
-    WHEN a.AnswerText = '0' THEN 'No - Non-Tech Role'
-    WHEN a.AnswerText = '-1' THEN 'Unknown / Not Answered'
-    ELSE 'Other'
-  END
+  TechRoleCategory,
+  COUNT(*) AS Total,
+  FORMAT(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 'N1') + '%' AS Percentage
+FROM (
+  SELECT 
+    CASE 
+      WHEN a.AnswerText = '1' THEN 'Yes - Tech Role'
+      WHEN a.AnswerText = '0' THEN 'No - Non-Tech Role'
+      WHEN a.AnswerText = '-1' THEN 'Unknown / Not Answered'
+      ELSE 'Other'
+    END AS TechRoleCategory
+  FROM dbo.Answer a
+  WHERE a.QuestionID = 13
+) AS sub
+GROUP BY TechRoleCategory
 ORDER BY Total DESC;
+
 ```
 
-![imagem](https://github.com/user-attachments/assets/22b5b05f-2eb9-4ef0-ae27-f1b660b0fe16)
+![imagem](https://github.com/user-attachments/assets/46afed9e-4ef0-4876-a276-7d262ed52f37)
+
 
 
 ### 📊Self-Employed - 'Yes' or 'No'
+
+```sql
+SELECT 
+  SelfEmploymentStatus,
+  COUNT(*) AS Total,
+  FORMAT(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 'N1') + '%' AS Percentage
+FROM (
+  SELECT 
+    CASE 
+      WHEN a.AnswerText = '1' THEN 'Yes - Self-employed'
+      WHEN a.AnswerText = '0' THEN 'No - Employed'
+      WHEN a.AnswerText = '-1' THEN 'Unknown / Not Answered'
+      ELSE 'Other'
+    END AS SelfEmploymentStatus
+  FROM dbo.Answer a
+  WHERE a.QuestionID = 5
+) AS sub
+GROUP BY SelfEmploymentStatus
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/d1c2d7dd-1a81-4cef-b4aa-4485ec9cc869)
+
+
+### 📊Company Size
+
+```sql
+SELECT 
+  CompanySizeCategory,
+  COUNT(*) AS Total,
+  FORMAT(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 'N1') + '%' AS Percentage
+FROM (
+  SELECT 
+    CASE 
+      WHEN a.AnswerText = '-1' THEN 'Unknown / Not Answered'
+      ELSE a.AnswerText
+    END AS CompanySizeCategory
+  FROM dbo.Answer a
+  WHERE a.QuestionID = 8
+) AS sub
+GROUP BY CompanySizeCategory
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/7355cdd7-6acd-478e-a89b-145af6514fb5)
+
