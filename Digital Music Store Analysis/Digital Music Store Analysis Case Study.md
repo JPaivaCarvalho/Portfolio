@@ -113,6 +113,7 @@ In contrast, among the lowest-selling artists, most had only one track sold, wit
 These names are largely composed of classical musicians, orchestras, and ensembles.
 
 **Q4) Which countries buy the most?**
+
 • By invoice
 ```sql
 SELECT 
