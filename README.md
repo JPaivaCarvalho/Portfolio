@@ -31,6 +31,7 @@ I am passionate about using data to drive insights and decision-making, and I ai
 - **Tools**: Python.
 
 ### Tableau, Excel / [Google Trends Portugal Dashboard](https://public.tableau.com/app/profile/jo.o.paiva.carvalho/viz/GoogleTrendsDashboardPortugal/Panel1)
+- **Description**: This project consists of creating an interactive dashboard using data from Google Trends, focused on the most popular search queries in Portugal over a 7-day period. The goal is to provide a clear and visually engaging view of the most searched topics, enabling the identification of trends, relevant events, and patterns of public interest in Portugal.
 - **Tools used**: Tableau, Excel
 - **Key Features**:
   - KPIs for total volume, top trends, and top trending search.
@@ -38,7 +39,7 @@ I am passionate about using data to drive insights and decision-making, and I ai
   - Treemap illustrating the percentage share of each trend.
  
 ### Google Looker Studio / [Netflix Content Dashboard](https://lookerstudio.google.com/s/laonNBS0l6M)
-- **Description**: Explore the interactive dashboard analyzing Netflix’s global catalog
+- **Description**: Explore the interactive dashboard analyzing Netflix’s global catalog.
 - **Tools**: Google Looker Studio, Google Sheet
 - **Key Features:**
   - Title trends over time.
