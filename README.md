@@ -17,7 +17,7 @@ I am passionate about using data to drive insights and decision-making, and I ai
 ### SQL, Excel, Power BI / [Digital Music Store Analysis](https://github.com/JPaivaCarvalho/Portfolio/tree/main/Digital%20Music%20Store%20Analysis)
 - **Description**: This project focuses on analyzing data from a digital music store to uncover customer preferences, identify sales trends, and provide actionable insights for optimizing the music catalog. By leveraging SQL, I explored sales records, user ratings, and purchasing behavior across various genres and artists.
 - **Key Skills Used**: Data Analysis, SQL, Data Visualization.
-- **Tools**: SQL, Excel, Power BI
+- **Tools**: Microsoft SQL Server, Excel, Power BI
 - **Key Features**:
   - Analysis of customer purchasing preferences by genre and artist
   - Trend identification of top-selling music categories
