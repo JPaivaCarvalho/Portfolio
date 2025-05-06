@@ -51,7 +51,7 @@ ORDER BY Percentage DESC;
 ![imagem](https://github.com/user-attachments/assets/c5046c24-8360-46ef-9abb-cfd42eb42e9c)   ![imagem](https://github.com/user-attachments/assets/a274720e-4af8-4c11-b219-f10f07256384)
 
 
-Média de idade por ano da survey                                      
+Average age by survey year                                    
 ```sql
 SELECT 
     a.SurveyID,
@@ -65,7 +65,7 @@ ORDER BY a.SurveyID;
 
 ![imagem](https://github.com/user-attachments/assets/13765063-82f0-4732-8c2d-19a3bd84e3bf)
 
-Média de idade geral
+Overall average age
 ```sql
 SELECT 
     AVG(CAST(a.AnswerText AS FLOAT)) AS OverallAverageAge
@@ -77,7 +77,7 @@ WHERE a.QuestionID = 1
 ![imagem](https://github.com/user-attachments/assets/daf06609-9848-4170-be8e-361fbff15a1d)
 
 ### 📊Gender
-Agrupou-se a lista de respostas em grupos padronizados de géneros.
+The list of responses was grouped into standardized gender categories.
 
 ```sql
 SELECT 
@@ -315,7 +315,7 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/86b8128b-41b7-4136-8d5f-6c93fd1dfc92)
 
-Agrupa respostas inválidas ou vazias como 'Missing'.
+Group invalid or empty responses as 'Missing'.
 
 
 ### 📊Sought treatment for a mental health disorder - 'Yes' or 'No'
@@ -492,7 +492,7 @@ GROUP BY
 ORDER BY Total DESC;
 ```
 
-### 📊Employer anonymity policy
+### 📊Employer Anonymity Policy
 
 ```sql
 SELECT 
@@ -521,7 +521,7 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/e5a48650-3dd4-46a9-bdcf-541be95c6397)
 
-### 📊Employer anonymity policy
+### 📊Employer-provided Health Coverage
 
 ```sql
 SELECT 
@@ -549,6 +549,229 @@ ORDER BY Total DESC;
 ```
 
 ![imagem](https://github.com/user-attachments/assets/6baade9e-2adf-4dbe-b1d1-db017bb8a6d6)
+
+### 📊Mental Health Communication
+
+```sql
+SELECT 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'yes' THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'no' THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('i don''t know', 'don''t know', 'dont know') THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+    ELSE 'Other'
+  END AS CleanedAnswer,
+  COUNT(*) AS Total,
+  CONCAT(CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)), ' %') AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 15
+  AND (TRY_CAST(AnswerText AS INT) IS NULL OR TRY_CAST(AnswerText AS INT) != -1)
+GROUP BY 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'yes' THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'no' THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('i don''t know', 'don''t know', 'dont know') THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+    ELSE 'Other'
+  END
+ORDER BY Total DESC;
+```
+![imagem](https://github.com/user-attachments/assets/c6982fe7-2c87-49e6-b70d-efe1f6e86c0f)
+
+### 📊Employer resources
+
+```sql
+SELECT 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'yes' THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'no' THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('i don''t know', 'don''t know', 'dont know') THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+    ELSE 'Other'
+  END AS CleanedAnswer,
+  COUNT(*) AS Total,
+  CONCAT(CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)), ' %') AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 16
+  AND (TRY_CAST(AnswerText AS INT) IS NULL OR TRY_CAST(AnswerText AS INT) != -1)
+GROUP BY 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'yes' THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'no' THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('i don''t know', 'don''t know', 'dont know') THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+    ELSE 'Other'
+  END
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/a72630eb-9825-4c78-82b5-41e6083b9dd7)
+
+### 📊Previous Employers
+
+a) Mental Health Benefits
+
+```sql
+SELECT 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('yes', 'yes, they all did') THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('no', 'no, none did') THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'some did' THEN 'Some'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('i don''t know', 'don''t know', 'dont know') THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+    ELSE 'Other'
+  END AS Answer,
+  COUNT(*) AS Total,
+  CONCAT(CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)), ' %') AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 23
+  AND (TRY_CAST(AnswerText AS INT) IS NULL OR TRY_CAST(AnswerText AS INT) != -1)
+GROUP BY 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('yes', 'yes, they all did') THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('no', 'no, none did') THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'some did' THEN 'Some'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('i don''t know', 'don''t know', 'dont know') THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+    ELSE 'Other'
+  END
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/40bfe6b2-6a83-4d23-87d3-5b9a00afb279)
+
+
+b) Previous care awareness
+
+```sql
+SELECT 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'yes' THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'no' THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('i don''t know', 'don''t know', 'dont know') THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+    ELSE 'Other'
+  END AS Answer,
+  COUNT(*) AS Total,
+  CONCAT(CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)), ' %') AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 24
+  AND (TRY_CAST(AnswerText AS INT) IS NULL OR TRY_CAST(AnswerText AS INT) != -1)
+GROUP BY 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'yes' THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'no' THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('i don''t know', 'don''t know', 'dont know') THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+    ELSE 'Other'
+  END
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/8d13fc08-2e90-4a4b-9bc0-2310e18a5f21)
+* n/a ('n/a (none offered)', 'n/a (not currently aware)', 'n/a (was not aware)')
+
+c) Previous formal discussion mental health
+
+```sql
+SELECT 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('yes', 'yes, they all did') THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('no', 'none did') THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'some did' THEN 'Some'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('i don''t know', 'don''t know', 'dont know') THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+    ELSE 'Other'
+  END AS CleanedAnswer,
+  COUNT(*) AS Total,
+  CONCAT(CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)), ' %') AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 25
+  AND (TRY_CAST(AnswerText AS INT) IS NULL OR TRY_CAST(AnswerText AS INT) != -1)
+GROUP BY 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('yes', 'yes, they all did') THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('no', 'none did') THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'some did' THEN 'Some'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('i don''t know', 'don''t know', 'dont know') THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+    ELSE 'Other'
+  END
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/01cd4a80-aa31-40e8-bc01-fcc1bd6002f1)
+
+
+d) Previous support resources
+
+```sql
+SELECT 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('yes', 'yes, they all did') THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('no', 'none did') THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'some did' THEN 'Some'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('i don''t know', 'don''t know', 'dont know') THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+    ELSE 'Other'
+  END AS CleanedAnswer,
+  COUNT(*) AS Total,
+  CONCAT(CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)), ' %') AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 26
+  AND (TRY_CAST(AnswerText AS INT) IS NULL OR TRY_CAST(AnswerText AS INT) != -1)
+GROUP BY 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('yes', 'yes, they all did') THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('no', 'none did') THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'some did' THEN 'Some'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('i don''t know', 'don''t know', 'dont know') THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+    ELSE 'Other'
+  END
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/d9d4314b-bc88-49ac-8e63-d4869780ee6d)
+
+e) Employer Anonymity Policy
+
+```sql
+SELECT 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('yes', 'yes, they all did') THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('no', 'no, none did') THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'some did' THEN 'Some'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'somewhat' THEN 'Somewhat'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('i don''t know', 'don''t know', 'dont know') THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+    -- Adiciona outras opções específicas se houver
+    ELSE LTRIM(RTRIM(AnswerText))  -- Mantém outras respostas literalmente, sem agrupar em 'Other'
+  END AS CleanedAnswer,
+  COUNT(*) AS Total,
+  CONCAT(
+    CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)), 
+    ' %'
+  ) AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 27
+  AND TRY_CAST(AnswerText AS INT) IS NULL  -- Exclui valores numéricos como -1
+  AND LTRIM(RTRIM(AnswerText)) <> ''       -- Exclui respostas em branco
+GROUP BY 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('yes', 'yes, they all did') THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('no', 'no, none did') THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'some did' THEN 'Some'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'somewhat' THEN 'Somewhat'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('i don''t know', 'don''t know', 'dont know') THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+    ELSE LTRIM(RTRIM(AnswerText))  -- Inclui explicitamente o texto original como categoria
+  END
+ORDER BY Total DESC;
+```
+
+### 📊Employer Physical and Mental health
+
 
 
 ## 🔵Communication and Comfort Discussing Mental Health
