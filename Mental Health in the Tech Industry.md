@@ -770,7 +770,32 @@ GROUP BY
 ORDER BY Total DESC;
 ```
 
-### 📊Employer Physical and Mental health
+### 📊Employer Physical and Mental health - 0 to 10
+
+a) Physical Health
+
+```sql
+SELECT 
+  CAST(AnswerText AS INT) AS Score,
+  COUNT(*) AS Total,
+  CONCAT(
+    CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)),
+    ' %'
+  ) AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 64
+  AND TRY_CAST(AnswerText AS INT) BETWEEN 0 AND 10  -- só aceita valores de 0 a 10
+  AND TRY_CAST(AnswerText AS INT) IS NOT NULL       -- exclui NULL e textos inválidos
+  AND LTRIM(RTRIM(AnswerText)) <> ''                -- exclui strings vazias
+  AND TRY_CAST(AnswerText AS INT) <> -1             -- exclui -1 explicitamente
+GROUP BY CAST(AnswerText AS INT)
+ORDER BY Score ASC;
+```
+
+![imagem](https://github.com/user-attachments/assets/9de9dd4e-cedf-4d71-85b2-4af6da51162e)
+
+
+b) Mental Health
 
 
 
