@@ -1,4 +1,11 @@
-# Mental Health in the Tech Industry
+<h1>Mental Health in the Tech Industry</h1>
+
+<img src="https://github.com/user-attachments/assets/f54542a1-324e-406e-ac30-ebe2f1d21a82" 
+     alt="Jan24" 
+     width="300" 
+     style="display: block; margin-left: auto; margin-right: auto;">
+
+
 
 ## Project Overview
 This project explores mental health attitudes and the prevalence of mental health conditions among employees in the tech industry. 
@@ -19,8 +26,7 @@ To better organize the analysis, we grouped the survey questions into thematic a
 - Demographic Information
 - Diagnosis, Treatment, and Mental Health Condition
 - Employer Support and Benefits
-- Communication and Comfort Discussing Mental Health
-- Stigma and Perceived Consequences
+- Communication and Comfort Discussing Mental Health«
 - Open-Ended Responses and Comments
 
 This thematic categorization helps structure the analysis logically and enables us to generate more relevant and actionable insights around different aspects of mental health in the workplace.
@@ -51,7 +57,7 @@ ORDER BY Percentage DESC;
 ![imagem](https://github.com/user-attachments/assets/c5046c24-8360-46ef-9abb-cfd42eb42e9c)   ![imagem](https://github.com/user-attachments/assets/a274720e-4af8-4c11-b219-f10f07256384)
 
 
-Average age by survey year                                    
+a) Average age by survey year                                    
 ```sql
 SELECT 
     a.SurveyID,
@@ -65,7 +71,7 @@ ORDER BY a.SurveyID;
 
 ![imagem](https://github.com/user-attachments/assets/13765063-82f0-4732-8c2d-19a3bd84e3bf)
 
-Overall average age
+b) Overall average age
 ```sql
 SELECT 
     AVG(CAST(a.AnswerText AS FLOAT)) AS OverallAverageAge
@@ -106,7 +112,7 @@ ORDER BY Total DESC;
 
 ### 📊Country
 
-#### Live in
+a) Live in
 
 ```sql
 SELECT 
@@ -130,7 +136,7 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/12f3a1b7-0155-40f0-afc8-d3d062f1a2ba)
 
-#### Work in
+b) Work in
 
 ```sql
 SELECT 
@@ -465,7 +471,7 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/0c8f200a-1008-47b4-be09-f7bf95fa3775)
 
-### 📊Employer-provided support
+### 📊Employer-Provided Support
 
 ```sql
 SELECT 
@@ -578,7 +584,7 @@ ORDER BY Total DESC;
 ```
 ![imagem](https://github.com/user-attachments/assets/c6982fe7-2c87-49e6-b70d-efe1f6e86c0f)
 
-### 📊Employer resources
+### 📊Employer Resources
 
 ```sql
 SELECT 
@@ -639,7 +645,6 @@ ORDER BY Total DESC;
 ```
 
 ![imagem](https://github.com/user-attachments/assets/40bfe6b2-6a83-4d23-87d3-5b9a00afb279)
-
 
 b) Previous care awareness
 
@@ -734,7 +739,7 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/d9d4314b-bc88-49ac-8e63-d4869780ee6d)
 
-e) Employer Anonymity Policy
+e) Previous Employer Anonymity Policy
 
 ```sql
 SELECT 
@@ -772,7 +777,7 @@ ORDER BY Total DESC;
 
 ### 📊Employer Physical and Mental health - 0 to 10
 
-a) Physical Health
+a) Importance of Physical Health to Current Employer
 
 ```sql
 SELECT 
@@ -795,15 +800,230 @@ ORDER BY Score ASC;
 ![imagem](https://github.com/user-attachments/assets/9de9dd4e-cedf-4d71-85b2-4af6da51162e)
 
 
-b) Mental Health
+b) Importance of Mental Health to Current Employer
+Use the same query, only the QuestionID changes to 65.
+
+![imagem](https://github.com/user-attachments/assets/8deb648c-74fd-4d7b-8f86-dcb59882912f)
+
+c) Importance of Physical Health to Previous Employer
+
+```sql
+SELECT 
+  CAST(AnswerText AS INT) AS Score,
+  COUNT(*) AS Total,
+  CONCAT(
+    CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)),
+    ' %'
+  ) AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 76
+  AND TRY_CAST(AnswerText AS INT) BETWEEN 0 AND 10
+  AND TRY_CAST(AnswerText AS INT) IS NOT NULL
+  AND LTRIM(RTRIM(AnswerText)) <> ''
+  AND TRY_CAST(AnswerText AS INT) <> -1
+GROUP BY CAST(AnswerText AS INT)
+ORDER BY Score ASC;
+```
+
+![imagem](https://github.com/user-attachments/assets/7debc9bc-546f-4edc-80d8-28533d24d85d)
+
+d) Importance of Mental Health to Previous Employer
+
+```sql
+SELECT 
+  CAST(AnswerText AS INT) AS Score,
+  COUNT(*) AS Total,
+  CONCAT(
+    CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)),
+    ' %'
+  ) AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 77
+  AND TRY_CAST(AnswerText AS INT) BETWEEN 0 AND 10
+  AND TRY_CAST(AnswerText AS INT) IS NOT NULL
+  AND LTRIM(RTRIM(AnswerText)) <> ''
+  AND TRY_CAST(AnswerText AS INT) <> -1
+GROUP BY CAST(AnswerText AS INT)
+ORDER BY Score ASC;
+```
+
+![imagem](https://github.com/user-attachments/assets/5592bbfb-eceb-4543-ae79-451f3f606500)
+
+### 📊Employer Wellness Talk
+
+```sql
+SELECT 
+  LTRIM(RTRIM(AnswerText)) AS Answer,
+  COUNT(*) AS Total,
+  CONCAT(
+    CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)),
+    ' %'
+  ) AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 95
+  AND TRY_CAST(AnswerText AS INT) IS NULL           -- exclui valores numéricos como -1
+  AND LTRIM(RTRIM(AnswerText)) <> ''                -- exclui respostas em branco
+  AND AnswerText IS NOT NULL                        -- exclui NULL
+GROUP BY LTRIM(RTRIM(AnswerText))
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/93cc8d51-a1ab-4968-9eaa-ac2de8b3a85f)
+
+### 📊Employer Mental health Support 
+
+Use the same query, only the QuestionID changes to 96.
+
+![imagem](https://github.com/user-attachments/assets/cb0b115f-0b96-4be7-a867-4828d03e65eb)
+
+### 📊Ease of Take medical leave for a mental health condition
+
+Use the same query, only the QuestionID changes to 97.
+
+![imagem](https://github.com/user-attachments/assets/ac2f78ef-e162-4471-b2d4-1221f63cce7d)
+
+### 📊Stigma of Mental Health at Work
+
+a) Discussing a mental health issue with your employer
+
+Use the same query, only the QuestionID changes to 98.
+
+![imagem](https://github.com/user-attachments/assets/028324e2-d0a1-4ca7-b0c9-edc2da62421b)
+
+b) Willing to discuss a mental health issue with your previous co-workers
+
+Use the same query, only the QuestionID changes to 110.
+
+![imagem](https://github.com/user-attachments/assets/d10e4d94-9bb0-40b8-9810-40a0c62420ae)
+
+
+### 📊Possible diagnosis
+
+Use the same query, only the QuestionID changes to 116.
+
+![imagem](https://github.com/user-attachments/assets/f5b6cccb-cf7a-44c9-af2e-01b38b5a4c8a)
 
 
 
 ## 🔵Communication and Comfort Discussing Mental Health
 Evaluates how comfortable employees feel discussing mental health with coworkers, supervisors, or during job interviews.
 
-## 🔵Stigma and Perceived Consequences
-Addresses fears of negative outcomes, stigma in the workplace, and how mental health disclosures may affect careers.
+### 📊Discussing mental health
+
+a) In An Interview
+
+```sql
+SELECT 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('yes') THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('no') THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) LIKE '%don''t%' THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) LIKE '%maybe%' THEN 'Maybe'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+  END AS CleanedAnswer,
+  COUNT(*) AS Total,
+  CONCAT(
+    CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)),
+    ' %'
+  ) AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 12
+  AND TRY_CAST(AnswerText AS INT) IS NULL       -- elimina números como -1
+  AND LTRIM(RTRIM(AnswerText)) <> ''            -- elimina strings vazias
+  AND AnswerText IS NOT NULL
+  AND LOWER(LTRIM(RTRIM(AnswerText))) IN (
+    'yes', 'no', 'maybe', 'i don''t know', 'dont know', 
+    'prefer not to answer'
+  )
+GROUP BY 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('yes') THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) IN ('no') THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) LIKE '%don''t%' THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) LIKE '%maybe%' THEN 'Maybe'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+  END
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/c7b976af-5bcc-4f47-8f74-a0703d6eb2eb)
+
+
+b) With Your Coworkers
+
+```sql
+SELECT 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'yes' THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'no' THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) LIKE '%don''t%' THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'maybe' THEN 'Maybe'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+  END AS CleanedAnswer,
+  COUNT(*) AS Total,
+  CONCAT(
+    CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)),
+    ' %'
+  ) AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 18
+  AND TRY_CAST(AnswerText AS INT) IS NULL         -- remove valores como -1
+  AND LTRIM(RTRIM(AnswerText)) <> ''              -- remove vazios
+  AND AnswerText IS NOT NULL
+  AND LOWER(LTRIM(RTRIM(AnswerText))) IN (
+    'yes', 'no', 'maybe', 'i don''t know', 'dont know', 'prefer not to answer'
+  )
+GROUP BY 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'yes' THEN 'Yes'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'no' THEN 'No'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) LIKE '%don''t%' THEN 'I don''t know'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'maybe' THEN 'Maybe'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
+  END
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/089c28b4-e9fe-4ba3-b8d3-3d5b233abee9)
+
+b) With Their Direct Supervisor(s)
+
+Use the same query, only the QuestionID changes to 19.
+![imagem](https://github.com/user-attachments/assets/0111fbe1-f577-4eb3-b278-10629f640a1e)
+
+
+c) Comfortable comparison preference: comfortable talking to your previous employer about your physical health or your mental health
+
+```sql
+SELECT 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'physical health' THEN 'Physical Health'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'mental health' THEN 'Mental Health'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'no difference' THEN 'No Difference'
+  END AS CleanedAnswer,
+  COUNT(*) AS Total,
+  CONCAT(
+    CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)),
+    ' %'
+  ) AS Percentage
+FROM dbo.Answer
+WHERE QuestionID = 69
+  AND TRY_CAST(AnswerText AS INT) IS NULL
+  AND LTRIM(RTRIM(AnswerText)) <> ''
+  AND LOWER(LTRIM(RTRIM(AnswerText))) IN (
+    'physical health', 'mental health', 'no difference'
+  )
+GROUP BY 
+  CASE 
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'physical health' THEN 'Physical Health'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'mental health' THEN 'Mental Health'
+    WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'no difference' THEN 'No Difference'
+  END
+ORDER BY Total DESC;
+```
+
+![imagem](https://github.com/user-attachments/assets/c8199cd7-6e07-45c9-8bda-eff03627373a)
+
 
 ## 🔵Open-Ended Responses and Comments
 Contains qualitative feedback and personal reflections, providing deeper insight into individual experiences and suggestions.
