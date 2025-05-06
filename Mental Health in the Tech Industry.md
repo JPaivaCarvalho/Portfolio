@@ -23,11 +23,12 @@ Some questions have numeric answers (e.g., age), while many others are categoric
 Understanding the types of questions and how responses are stored is key to designing meaningful queries and extracting insights from the data.
 
 To better organize the analysis, we grouped the survey questions into thematic areas:
-**- Demographic Information**
-**- Diagnosis, Treatment, and Mental Health Condition**
-**- Employer Support and Benefits**
-**- Communication and Comfort Discussing Mental Health**
-**- Open-Ended Responses and Comments**
+
+- **Demographic Information**
+- **Diagnosis, Treatment, and Mental Health Condition**
+- **Employer Support and Benefits**
+- **Communication and Comfort Discussing Mental Health**
+- **Open-Ended Responses and Comments**
 
 This thematic categorization helps structure the analysis logically and enables us to generate more relevant and actionable insights around different aspects of mental health in the workplace.
 
