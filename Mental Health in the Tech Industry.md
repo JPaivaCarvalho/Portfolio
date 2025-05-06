@@ -58,7 +58,7 @@ ORDER BY Percentage DESC;
 ![imagem](https://github.com/user-attachments/assets/c5046c24-8360-46ef-9abb-cfd42eb42e9c)   ![imagem](https://github.com/user-attachments/assets/a274720e-4af8-4c11-b219-f10f07256384)
 
 
-a) Average age by survey year                                    
+**a) Average age by survey year**                                 
 ```sql
 SELECT 
     a.SurveyID,
@@ -72,7 +72,7 @@ ORDER BY a.SurveyID;
 
 ![imagem](https://github.com/user-attachments/assets/13765063-82f0-4732-8c2d-19a3bd84e3bf)
 
-b) Overall average age
+**b) Overall average age**
 ```sql
 SELECT 
     AVG(CAST(a.AnswerText AS FLOAT)) AS OverallAverageAge
@@ -113,7 +113,7 @@ ORDER BY Total DESC;
 
 ### 📊Country
 
-a) Live in
+**a) Live in**
 
 ```sql
 SELECT 
@@ -137,7 +137,7 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/12f3a1b7-0155-40f0-afc8-d3d062f1a2ba)
 
-b) Work in
+**b) Work in**
 
 ```sql
 SELECT 
@@ -322,7 +322,7 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/86b8128b-41b7-4136-8d5f-6c93fd1dfc92)
 
-Group invalid or empty responses as 'Missing'.
+**Group invalid or empty responses as 'Missing'.**
 
 
 ### 📊Sought treatment for a mental health disorder - 'Yes' or 'No'
@@ -388,13 +388,13 @@ ORDER BY Total DESC;
 
 ### 📊Mental health disorder currently - 'Yes' or 'No'
 
-Use the same query, only the QuestionID changes to 33.
+**Use the same query, only the QuestionID changes to 33.**
 
 ![imagem](https://github.com/user-attachments/assets/ffeb0571-c98c-4a5f-9f2d-d1869fe40a00)
 
 ### 📊Mental health disorder impact on Work
 
-a) When being treated
+**a) When being treated**
 
 ```sql
 SELECT 
@@ -430,7 +430,7 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/4035f513-9e03-43ae-bde7-3addf569a448)
 
-b) When not being treated
+**b) When not being treated**
 Use the same query, only the QuestionID changes to 49.
 
 ![imagem](https://github.com/user-attachments/assets/2a8ba652-e6c5-4e64-a559-41561b567ad6)
@@ -616,7 +616,7 @@ ORDER BY Total DESC;
 
 ### 📊Previous Employers
 
-a) Mental Health Benefits
+**a) Mental Health Benefits**
 
 ```sql
 SELECT 
@@ -647,7 +647,7 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/40bfe6b2-6a83-4d23-87d3-5b9a00afb279)
 
-b) Previous care awareness
+**b) Previous care awareness**
 
 ```sql
 SELECT 
@@ -675,9 +675,9 @@ ORDER BY Total DESC;
 ```
 
 ![imagem](https://github.com/user-attachments/assets/8d13fc08-2e90-4a4b-9bc0-2310e18a5f21)
-* n/a ('n/a (none offered)', 'n/a (not currently aware)', 'n/a (was not aware)')
+**n/a ('n/a (none offered)', 'n/a (not currently aware)', 'n/a (was not aware)')**
 
-c) Previous formal discussion mental health
+**c) Previous formal discussion mental health**
 
 ```sql
 SELECT 
@@ -708,8 +708,7 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/01cd4a80-aa31-40e8-bc01-fcc1bd6002f1)
 
-
-d) Previous support resources
+**d) Previous support resources**
 
 ```sql
 SELECT 
@@ -740,7 +739,7 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/d9d4314b-bc88-49ac-8e63-d4869780ee6d)
 
-e) Previous Employer Anonymity Policy
+**e) Previous Employer Anonymity Policy**
 
 ```sql
 SELECT 
@@ -778,7 +777,7 @@ ORDER BY Total DESC;
 
 ### 📊Employer Physical and Mental health - 0 to 10
 
-a) Importance of Physical Health to Current Employer
+**a) Importance of Physical Health to Current Employer**
 
 ```sql
 SELECT 
@@ -800,13 +799,13 @@ ORDER BY Score ASC;
 
 ![imagem](https://github.com/user-attachments/assets/9de9dd4e-cedf-4d71-85b2-4af6da51162e)
 
+**b) Importance of Mental Health to Current Employer**
 
-b) Importance of Mental Health to Current Employer
 Use the same query, only the QuestionID changes to 65.
 
 ![imagem](https://github.com/user-attachments/assets/8deb648c-74fd-4d7b-8f86-dcb59882912f)
 
-c) Importance of Physical Health to Previous Employer
+**c) Importance of Physical Health to Previous Employer**
 
 ```sql
 SELECT 
@@ -828,7 +827,7 @@ ORDER BY Score ASC;
 
 ![imagem](https://github.com/user-attachments/assets/7debc9bc-546f-4edc-80d8-28533d24d85d)
 
-d) Importance of Mental Health to Previous Employer
+**d) Importance of Mental Health to Previous Employer**
 
 ```sql
 SELECT 
@@ -873,25 +872,25 @@ ORDER BY Total DESC;
 
 ### 📊Employer Mental health Support 
 
-Use the same query, only the QuestionID changes to 96.
+**Use the same query, only the QuestionID changes to 96.**
 
 ![imagem](https://github.com/user-attachments/assets/cb0b115f-0b96-4be7-a867-4828d03e65eb)
 
 ### 📊Ease of Take medical leave for a mental health condition
 
-Use the same query, only the QuestionID changes to 97.
+**Use the same query, only the QuestionID changes to 97.**
 
 ![imagem](https://github.com/user-attachments/assets/ac2f78ef-e162-4471-b2d4-1221f63cce7d)
 
 ### 📊Stigma of Mental Health at Work
 
-a) Discussing a mental health issue with your employer
+**a) Discussing a mental health issue with your employer**
 
 Use the same query, only the QuestionID changes to 98.
 
 ![imagem](https://github.com/user-attachments/assets/028324e2-d0a1-4ca7-b0c9-edc2da62421b)
 
-b) Willing to discuss a mental health issue with your previous co-workers
+**b) Willing to discuss a mental health issue with your previous co-workers**
 
 Use the same query, only the QuestionID changes to 110.
 
@@ -911,7 +910,7 @@ Evaluates how comfortable employees feel discussing mental health with coworkers
 
 ### 📊Discussing mental health
 
-a) In An Interview
+**a) In An Interview**
 
 ```sql
 SELECT 
@@ -949,8 +948,7 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/c7b976af-5bcc-4f47-8f74-a0703d6eb2eb)
 
-
-b) With Your Coworkers
+**b) With Your Coworkers**
 
 ```sql
 SELECT 
@@ -987,13 +985,13 @@ ORDER BY Total DESC;
 
 ![imagem](https://github.com/user-attachments/assets/089c28b4-e9fe-4ba3-b8d3-3d5b233abee9)
 
-b) With Their Direct Supervisor(s)
+**c) With Their Direct Supervisor(s)**
 
 Use the same query, only the QuestionID changes to 19.
+
 ![imagem](https://github.com/user-attachments/assets/0111fbe1-f577-4eb3-b278-10629f640a1e)
 
-
-c) Comfortable comparison preference: comfortable talking to your previous employer about your physical health or your mental health
+### 📊Comfortable comparison preference: comfortable talking to your previous employer about your physical health or your mental health
 
 ```sql
 SELECT 
@@ -1028,3 +1026,5 @@ ORDER BY Total DESC;
 
 ## 🔵Open-Ended Responses and Comments
 Contains qualitative feedback and personal reflections, providing deeper insight into individual experiences and suggestions.
+
+
