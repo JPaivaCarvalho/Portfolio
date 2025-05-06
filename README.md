@@ -5,6 +5,15 @@ I am passionate about using data to drive insights and decision-making, and I ai
 
 ## 📊My Projects
 
+### Google Analytics / [Google E-Commerce Store](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Google%20Merchandise%20Store%20-%20Google%20Analytics.md)
+- **Description**: In this project, I analyzed e-commerce data using Google Analytics 4 to assess user behavior across landing pages, product performance, and the checkout funnel. By exploring key metrics such as purchase conversion rate, cart abandonment, and funnel drop-off points, I identified friction areas in the customer journey and proposed data-driven strategies to increase conversions.
+- **Key Skills Used**: Data Interpretation
+- **Tools**: Google Analytics 4
+- **Key Features**:
+  - Identified a high checkout abandonment rate at the payment stage and proposed concrete UX and payment method improvements.
+  - Analyzed product-level cart abandonment rates, highlighting high-interest items like Google Stickers with low conversion follow-through.
+  - Evaluated landing page performance, revealing underperforming pages.
+
 ### SQL / [Mental Health in the Tech Industry](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Mental%20Health%20in%20the%20Tech%20Industry.md)
 - **Description**: In this project, I explored survey data on mental health in the tech industry using SQL. The goal was to assess how professionals experience, discuss, and receive support for mental health issues at work. By organizing questions into thematic categories (e.g., diagnosis, benefits, stigma, company culture), I cleaned and analyzed the dataset to uncover trends and meaningful insights that can support employee well-being.
 - **Key Skills Used**: Data Cleaning, SQL Queries, Data Categorization, Insight Extraction
@@ -14,15 +23,6 @@ I am passionate about using data to drive insights and decision-making, and I ai
   - Grouped questions by theme to allow structured analysis across areas like employer support, diagnosis history, and employee comfort levels.  
   - Used SQL to calculate percentages, handle missing values, and identify patterns across survey years.  
   - Enabled a deeper understanding of mental health culture in tech environments based on real-world responses.
-
-### Google Analytics / [Google E-Commerce Store](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Google%20Merchandise%20Store%20-%20Google%20Analytics.md)
-- **Description**: In this project, I analyzed e-commerce data using Google Analytics 4 to assess user behavior across landing pages, product performance, and the checkout funnel. By exploring key metrics such as purchase conversion rate, cart abandonment, and funnel drop-off points, I identified friction areas in the customer journey and proposed data-driven strategies to increase conversions.
-- **Key Skills Used**: Data Interpretation
-- **Tools**: Google Analytics 4
-- **Key Features**:
-  - Identified a high checkout abandonment rate at the payment stage and proposed concrete UX and payment method improvements.
-  - Analyzed product-level cart abandonment rates, highlighting high-interest items like Google Stickers with low conversion follow-through.
-  - Evaluated landing page performance, revealing underperforming pages.
 
 ### SQL, Excel, Power BI / [Digital Music Store Analysis](https://github.com/JPaivaCarvalho/Portfolio/tree/main/Digital%20Music%20Store%20Analysis)
 - **Description**: This project focuses on analyzing data from a digital music store to uncover customer preferences, identify sales trends, and provide actionable insights for optimizing the music catalog. By leveraging SQL, I explored sales records, user ratings, and purchasing behavior across various genres and artists.
@@ -56,7 +56,6 @@ I am passionate about using data to drive insights and decision-making, and I ai
   - Movie vs TV Show distribution.
   - Popular genres and ratings.
   - Geographic breakdown of content.
-
 
 ## 🛠️Skills
 - **Programming Languages**: Python, SQL
