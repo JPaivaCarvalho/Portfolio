@@ -32,6 +32,20 @@ To better organize the analysis, we grouped the survey questions into thematic a
 
 This thematic categorization helps structure the analysis logically and enables us to generate more relevant and actionable insights around different aspects of mental health in the workplace.
 
+## 💡Main Insights
+
+- Most respondents are between 25 and 35 years old. The majority work in tech companies or hold technical roles (e.g., back-end developer, DevOps, support). A large portion live and work in the United States.
+  
+- About one-third of respondents currently have a diagnosed mental health condition. 40–50% have sought treatment from a mental health professional at some point. Even among those receiving treatment, many report that symptoms still interfere with their work at least “sometimes”. Most commonly mentioned conditions (from open-ended responses):Mood disorders, anxiety, ADHD, personality disorders. A significant number don’t feel comfortable discussing mental health issues with: Direct supervisors, HR departments, Colleagues. Many fear negative career consequences, stigma, or discrimination.
+  
+- Nearly half of respondents say their employer does not offer clear mental health benefits. Even when benefits exist, many don’t know how to access them or what’s included. Most companies have never formally addressed mental health through internal communication or wellness programs. Anonymity in using mental health resources is not guaranteed or not clearly communicated.
+
+- Regarding Previous Employer Practices: Trends are similar to current employers: lack of formal discussion or support. Many open responses describe negative experiences, such as being dismissed or judged for speaking up. However, some positive examples also exist: empathetic leadership, flexibility, and access to paid therapy.
+
+- Respondents shared practical suggestions to improve mental health support: Normalize mental health conversations. Train managers to be more empathetic and better informed. Offer flexible hours and remote work options.
+Provide clear access to resources (therapy, leave, support lines). Combat the toxic productivity culture and “hustle mindset.”
+
+Below you can find the results, the SQL queries, and the outputs that lead us to these insights.
 
 ## 🔵Demographic Information
 Includes data such as age, gender, role, location, work arrangement, and company size to enable segmentation of responses.
@@ -920,7 +934,7 @@ SELECT
     WHEN LOWER(LTRIM(RTRIM(AnswerText))) LIKE '%don''t%' THEN 'I don''t know'
     WHEN LOWER(LTRIM(RTRIM(AnswerText))) LIKE '%maybe%' THEN 'Maybe'
     WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
-  END AS CleanedAnswer,
+  END AS Answer,
   COUNT(*) AS Total,
   CONCAT(
     CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)),
@@ -958,7 +972,7 @@ SELECT
     WHEN LOWER(LTRIM(RTRIM(AnswerText))) LIKE '%don''t%' THEN 'I don''t know'
     WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'maybe' THEN 'Maybe'
     WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'prefer not to answer' THEN 'Prefer not to answer'
-  END AS CleanedAnswer,
+  END AS Answer,
   COUNT(*) AS Total,
   CONCAT(
     CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)),
@@ -999,7 +1013,7 @@ SELECT
     WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'physical health' THEN 'Physical Health'
     WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'mental health' THEN 'Mental Health'
     WHEN LOWER(LTRIM(RTRIM(AnswerText))) = 'no difference' THEN 'No Difference'
-  END AS CleanedAnswer,
+  END AS Answer,
   COUNT(*) AS Total,
   CONCAT(
     CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS DECIMAL(5,2)),
@@ -1046,35 +1060,122 @@ Sample of Answers
 
 ✅ Positive Experiences with Employers
 - Emotional Support and Understanding:
+  
   **“Both of them were understanding.”**
   **“All reactions were positive and supportive.”**
 
 - Reasonable accommodations provided:
+  
   **“Employer readily provides mental health leave…”**
   **“80% work schedule to accommodate various appointments.”**
 
 ❌ Negative Experiences
 - Denial of Support or Benefits:
+  
   **“Applied for extra leave because of mental disability, was rejected at first.”**
   **“After a rather terrible situation… HR ended up just complaining about consequences.”**
 
 - Hostile or Insensitive Environment:
+  
   **“Anger outbursts in office that kept me ending up in HR meetings.”**
   **“Manager was unkind and dismissive…”**
 
 🤝 Request for Accommodations
 - Request for Time Off or Rest Days:
+  
   **“Request to take a day off to deal with stress.”**
   **“Asked my manager for permission to share with my therapist an internal recording…”**
 
 - Discussion of Formal Accommodations:
+  
   **“A medical issue… took the time I needed to sort myself out.”**
   **“Accommodation form provided, was oddly specific and complex…”**
 
 🧍‍♀️Narratives of Sensitive Situations
 - Critical Situations and Post-Traumatic Stress:
+  
   **“After a particularly troubling episode… not replaced at work…”**
   **“Asked to be demoted due to stress caused by a presentation.”**
 
 - Consequences of a Colleague’s Death:
   **“There were a number of conversations about mental health…”**
+
+### 📊Describe what you think the industry as a whole and/or employers could do to improve mental health support for employees
+
+```sql
+SELECT 
+    LTRIM(RTRIM(AnswerText)) AS Answers
+FROM dbo.Answer
+WHERE QuestionID = 86
+    AND AnswerText IS NOT NULL
+    AND TRY_CAST(AnswerText AS INT) IS NULL  -- remove valores como -1
+    AND LTRIM(RTRIM(AnswerText)) NOT IN (
+        '', '-', '--', 'n/a', 'N/A', 'na',
+        '¯\\(°_o)/¯', '¯\\_(ツ)_/¯',
+        'Acceptance', 'A lot', 'I''m not sure', 'Acknowledge its existence'
+    )  -- remove respostas curtas ou sem conteúdo relevante
+    AND LEN(LTRIM(RTRIM(AnswerText))) > 10  -- garantir conteúdo minimamente significativo
+ORDER BY Answers;
+```
+
+Sample of Answers
+![imagem](https://github.com/user-attachments/assets/50eec626-304c-4078-a6f9-e41211b12689)
+
+Employees are asking for a more human, flexible, and mentally healthy work environment. They want companies—especially in the tech industry—to take meaningful steps: open conversations, 
+flexible policies, access to care, and above all, a culture that values people over performance.
+
+🧠 1. Normalize Mental Health
+- A recurring theme is the call to treat mental health like physical health:
+  
+  • Reduce stigma and encourage openness.
+  • Include mental health in everyday conversations at work.
+  • Acknowledge that struggles are part of being human.
+  
+**“Accept that we’re all actually humans and that’s OK. Don’t frame negative behavior as weakness.”**
+
+💬 2. Open Communication & Empathetic Management
+
+- Respondents emphasized the need for:
+
+  • Managers trained to handle mental health topics.
+  • Safe and supportive spaces to talk without fear of judgment or consequences.
+  • Clear mental health policies communicated to all.
+
+**“Awareness. Start discussing it more. Support. Offer onsite counseling.”**
+
+🏠 3. Flexible Work Arrangements
+
+- Flexibility emerged as a clear priority:
+
+  • Remote work or hybrid models.
+  • Flexible hours and reduced workload when needed.
+  • Access to sick leave for mental health issues.
+
+**“A work culture that respects personal life is most important: flexible schedules, remote options, asynchronous communication.”**
+
+🛠️ 4. Formal Resources & Accessibility
+
+- Many respondents requested:
+
+  • Insurance that covers mental health care.
+  • Free or subsidized therapy.
+  • Anonymous ways to seek help (e.g. hotlines or platforms).
+
+**“Employers should offer free access to therapy and create anonymous channels to request help.”**
+
+🔁 5. Toxic Productivity Culture
+
+- A strong critique of overwork and hustle culture came through:
+
+  • High performance expectations despite personal challenges.
+  • Lack of rest culture or burnout prevention measures.
+  • Misunderstanding of what mental health support truly means.
+
+“The tech industry glorifies overwork. We need to normalize breaks and burnout prevention.”
+
+✏️ Other Patterns
+
+- Frustration with HR and lack of follow-through.
+
+  • Calls for education at all organizational levels.
+  • Recognition that mental health should be discussed from onboarding to leadership.
