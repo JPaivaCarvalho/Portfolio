@@ -1027,4 +1027,54 @@ ORDER BY Total DESC;
 ## 🔵Open-Ended Responses and Comments
 Contains qualitative feedback and personal reflections, providing deeper insight into individual experiences and suggestions.
 
+### 📊Describe the conversation you had with your employer about your mental health, including their reactions and what actions were taken to address your mental health issue/questions.
 
+```sql
+SELECT 
+    LTRIM(RTRIM(AnswerText)) AS Answers
+FROM dbo.Answer
+WHERE QuestionID = 59
+    AND TRY_CAST(AnswerText AS INT) IS NULL                                    -- exclui valores numéricos inválidos como -1
+    AND AnswerText IS NOT NULL                                                 -- exclui NULL
+    AND LTRIM(RTRIM(AnswerText)) NOT IN ('', '-', '--', 'n/a', 'N/A', 'na')    -- exclui vazios e ruído comum
+    AND LEN(LTRIM(RTRIM(AnswerText))) > 2                                      -- exclui strings muito curtas como "." ou "-"
+ORDER BY Answers;
+```
+
+Sample of Answers
+![imagem](https://github.com/user-attachments/assets/e12a2d42-07a7-491d-a129-19d36cadc03b)
+
+✅ Positive Experiences with Employers
+- Emotional Support and Understanding:
+  **“Both of them were understanding.”**
+  **“All reactions were positive and supportive.”**
+
+- Reasonable accommodations provided:
+  **“Employer readily provides mental health leave…”**
+  **“80% work schedule to accommodate various appointments.”**
+
+❌ Negative Experiences
+- Denial of Support or Benefits:
+  **“Applied for extra leave because of mental disability, was rejected at first.”**
+  **“After a rather terrible situation… HR ended up just complaining about consequences.”**
+
+- Hostile or Insensitive Environment:
+  **“Anger outbursts in office that kept me ending up in HR meetings.”**
+  **“Manager was unkind and dismissive…”**
+
+🤝 Request for Accommodations
+- Request for Time Off or Rest Days:
+  **“Request to take a day off to deal with stress.”**
+  **“Asked my manager for permission to share with my therapist an internal recording…”**
+
+- Discussion of Formal Accommodations:
+  **“A medical issue… took the time I needed to sort myself out.”**
+  **“Accommodation form provided, was oddly specific and complex…”**
+
+🧍‍♀️Narratives of Sensitive Situations
+- Critical Situations and Post-Traumatic Stress:
+  **“After a particularly troubling episode… not replaced at work…”**
+  **“Asked to be demoted due to stress caused by a presentation.”**
+
+- Consequences of a Colleague’s Death:
+  **“There were a number of conversations about mental health…”**
