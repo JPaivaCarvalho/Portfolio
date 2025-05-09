@@ -14,7 +14,7 @@ I am passionate about using data to drive insights and decision-making, and I ai
   - Analyzed product-level cart abandonment rates, highlighting high-interest items like Google Stickers with low conversion follow-through.
   - Evaluated landing page performance, revealing underperforming pages.
 
-### SQL / [Mental Health in the Tech Industry](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Mental%20Health%20in%20the%20Tech%20Industry.md)
+### SQL / [Mental Health in the Tech Industry](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Mental%20Health%20in%20Tech%20Industry/Mental%20Health%20in%20the%20Tech%20Industry.md)
 - **Description**: In this project, I explored survey data on mental health in the tech industry using SQL. The goal was to assess how professionals experience, discuss, and receive support for mental health issues at work. By organizing questions into thematic categories (e.g., diagnosis, benefits, stigma, company culture), I cleaned and analyzed the dataset to uncover trends and meaningful insights that can support employee well-being.
 - **Key Skills Used**: Data Cleaning, SQL Queries, Data Categorization, Insight Extraction
 - **Tools**: SQL Server Management Studio (SSMS)
