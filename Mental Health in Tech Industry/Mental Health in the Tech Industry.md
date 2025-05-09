@@ -689,6 +689,7 @@ ORDER BY Total DESC;
 ```
 
 ![imagem](https://github.com/user-attachments/assets/8d13fc08-2e90-4a4b-9bc0-2310e18a5f21)
+
 **n/a ('n/a (none offered)', 'n/a (not currently aware)', 'n/a (was not aware)')**
 
 **c) Previous formal discussion mental health**
