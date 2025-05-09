@@ -14,10 +14,10 @@ I am passionate about using data to drive insights and decision-making, and I ai
   - Analyzed product-level cart abandonment rates, highlighting high-interest items like Google Stickers with low conversion follow-through.
   - Evaluated landing page performance, revealing underperforming pages.
 
-### SQL / [Mental Health in the Tech Industry](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Mental%20Health%20in%20Tech%20Industry/Mental%20Health%20in%20the%20Tech%20Industry.md)
-- **Description**: In this project, I explored survey data on mental health in the tech industry using SQL. The goal was to assess how professionals experience, discuss, and receive support for mental health issues at work. By organizing questions into thematic categories (e.g., diagnosis, benefits, stigma, company culture), I cleaned and analyzed the dataset to uncover trends and meaningful insights that can support employee well-being.
+### SQL, Python, Power BI / [Mental Health in the Tech Industry](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Mental%20Health%20in%20Tech%20Industry/Mental%20Health%20in%20the%20Tech%20Industry.md)
+- **Description**: In this project, I explored survey data on mental health in the tech industry using SQL. The goal was to assess how professionals experience, discuss, and receive support for mental health issues at work. By organizing questions into thematic categories (e.g., diagnosis, benefits, stigma, company culture), I cleaned and analyzed the dataset to uncover trends and meaningful insights that can support employee well-being. I also combined Python and SQL to generate a custom Word Cloud from open-text responses, which was integrated into the Power BI dashboard to visually highlight the most frequent suggestions for improving support.
 - **Key Skills Used**: Data Cleaning, SQL Queries, Data Categorization, Insight Extraction
-- **Tools**: SQL Server Management Studio (SSMS)
+- **Tools**: SQL Server Management Studio (SSMS), Power BI and [Python](https://colab.research.google.com/drive/1BJCwakEKMms_kOmQOM0LTZrEnYwSzQ6y?usp=sharing)
 - **Key Features**:
   - Cleaned and standardized survey responses across multiple question types (e.g., binary, Likert scale, open text).  
   - Grouped questions by theme to allow structured analysis across areas like employer support, diagnosis history, and employee comfort levels.  
