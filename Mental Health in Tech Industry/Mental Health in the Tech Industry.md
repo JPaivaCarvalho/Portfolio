@@ -10,6 +10,7 @@
 ## Project Overview
 This project explores mental health attitudes and the prevalence of mental health conditions among employees in the tech industry. 
 We will use SQL to analyze and gain insights from survey data.
+To complement the insights extracted through SQL analysis, this project includes an interactive data visualization dashboard built with [Power BI](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Mental%20Health%20in%20Tech%20Industry/Mental%20Health%20in%20Tech%20Industry%20Dashboard.pbix). It allows for a clearer interpretation of trends, patterns, and key findings around mental health in the tech industry.
 
 
 ## Understand the Dataset
