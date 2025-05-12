@@ -34,7 +34,7 @@ I am passionate about using data to drive insights and decision-making, and I ai
   - Data-driven recommendations to optimize the catalog and improve sales
   - Visual dashboards and charts to support insights and facilitate decision-making
 
-### Python / [Relax: Predicting User Adoption Takehome](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Relax_Predicting_User_Adoption_Takehome.ipynb)
+### Python / [Relax: Predicting Future Adopted User](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Relax_Predicting_User_Adoption_Takehome.ipynb)
 - **Description**: In this project, I am working on analyzing user adoption behavior for a fictional company, **Relax Inc.** The goal is to identify users who have adopted
   the platform based on login frequency and other factors. Using a **Decision Tree** model, I aim to predict whether a user will become an "adopted user".
 - **Key Skills Used**: Data Cleaning, Exploratory Data Analysis, Data Mining, Predictive Analytics.
