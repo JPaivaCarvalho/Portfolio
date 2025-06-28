@@ -5,6 +5,18 @@ I am passionate about using data to drive insights and decision-making, and I ai
 
 ## 📊My Projects
 
+### Digital Marketing Strategy / [Better Skin – Digital Marketing Plan]
+- **Description**: This academic group project focused on developing a complete digital marketing strategy for *Better Skin*, a genderless skincare brand. The plan covered the setup of an e-commerce store on Shopify, SEO and content strategy, Google Ads campaigns (Display, Video, Shopping), social media ads, email marketing automation, and performance analytics using Google Analytics.
+- **Key Skills**: Digital Strategy, SEO, Paid Media, E-commerce, Email Marketing, Analytics & KPI Measurement
+- **Tools Used**: Shopify, Google Ads, Facebook & Instagram Ads, Mailchimp, Google Analytics 4
+
+- **Project Highlights**:
+  - Built a Shopify e-commerce store and created a visual identity targeting gender-neutral skincare users aged 23–34 in New York.
+  - Planned and executed full-funnel ad campaigns (Awareness, Consideration, Purchase, Repeat) using Google Ads and Meta Ads.
+  - Created automated email flows for welcome, birthday, cart recovery, and customer retention.
+  - Designed an SEO strategy based on keyword research using Ubersuggest, with implementation across the site.
+  - Measured key performance indicators such as website sessions, cart abandonment rate, traffic sources, and returning customers using GA4.
+
 ### Google Analytics / [Google E-Commerce Store](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Google%20Merchandise%20Store%20-%20Google%20Analytics.md)
 - **Description**: In this project, I analyzed e-commerce data using Google Analytics 4 to assess user behavior across landing pages, product performance, and the checkout funnel. By exploring key metrics such as purchase conversion rate, cart abandonment, and funnel drop-off points, I identified friction areas in the customer journey and proposed data-driven strategies to increase conversions.
 - **Key Skills Used**: Data Interpretation
