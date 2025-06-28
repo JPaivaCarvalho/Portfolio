@@ -9,4 +9,4 @@ content creation, paid media (Google Ads & Meta Ads), email marketing, and perfo
 🔗 **E-commerce Website**: [https://p4-g1.myshopify.com](https://p4-g1.myshopify.com)  
 🔐 **Password**: towlor
 
-👉🏻 Here The Full Plan: [Better Skin Digital Marketing Plan](https://github.com/JPaivaCarvalho/Portfolio/blob/main/BetterSkin%20Digital%20Marketing%20Plan/Better%20Skin%20Digital%20Marketing%20Plan.pdf)
+👉🏻 Access the full strategy document here: [Better Skin Digital Marketing Plan](https://github.com/JPaivaCarvalho/Portfolio/blob/main/BetterSkin%20Digital%20Marketing%20Plan/Better%20Skin%20Digital%20Marketing%20Plan.pdf)
