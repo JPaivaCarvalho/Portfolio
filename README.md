@@ -1,4 +1,4 @@
-# João Paiva Carvalho - Data Analytics & Digital Marketing Portfolio
+# João Paiva Carvalho - Digital Marketing & Data Analytics Portfolio
 
 Welcome to my GitHub portfolio! Here, you will find a selection of projects showcasing my skills and experience in Data Analytics, Digital Marketing, and Coding. 
 I am passionate about using data to drive insights and decision-making, and I aim to continue developing my expertise in this field.
