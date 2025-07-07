@@ -5,7 +5,7 @@ I am passionate about using data to drive insights and decision-making, and I ai
 
 ## 📊My Projects
 
-### Digital Marketing Strategy / [Better Skin – Digital Marketing Plan]
+### Digital Marketing Strategy / [[Better Skin – Digital Marketing Plan]](https://github.com/JPaivaCarvalho/Portfolio/blob/main/BetterSkin%20Digital%20Marketing%20Plan/Better%20Skin%20Digital%20Marketing%20Plan.pdf)
 - **Description**: This academic group project focused on developing a complete digital marketing strategy for *Better Skin*, a genderless skincare brand. The plan covered the setup of an e-commerce store on Shopify, SEO and content strategy, Google Ads campaigns (Display, Video, Shopping), social media ads, email marketing automation, and performance analytics using Google Analytics.
 - **Key Skills**: Digital Strategy, SEO, Paid Media, E-commerce, Email Marketing, Analytics & KPI Measurement
 - **Tools Used**: Shopify, Google Ads, Facebook & Instagram Ads, Mailchimp, Google Analytics 4
