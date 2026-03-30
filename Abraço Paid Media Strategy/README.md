@@ -11,4 +11,8 @@ The work included three key deliverables — a comprehensive Google Ads Grants a
 
 ### Google Ads Strategy — In Review
 
-To access each of the deliverables: [here](#)
+To access each of the deliverables:
+
+- [Google Ads Grants Audit](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Abrac%CC%A7o%20Paid%20Media%20Strategy/Abrac%CC%A7o%20%7C%20Google%20Ads%20Grants%20Audit.pdf)
+- [Meta Ads Strategy](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Abrac%CC%A7o%20Paid%20Media%20Strategy/Abrac%CC%A7o%20%7C%20Meta%20Ads%20Strategy.pdf)
+- [Meta Business Suite Audit](https://github.com/JPaivaCarvalho/Portfolio/blob/main/Abrac%CC%A7o%20Paid%20Media%20Strategy/Abrac%CC%A7o%20%7C%20Meta%20Business%20Suite%20Audit.pdf)
