@@ -9,7 +9,7 @@ The work included three key deliverables — a comprehensive Google Ads Grants a
 |------------------------|---------------------------|-------------------|
 | Full diagnostic of the Google Ads Grants account with 12 campaigns and identification of €17k+ in wasted spend | Organic analysis (Jan–Mar 2026) of Facebook & Instagram: performance, formats, demographics, and growth | Plan for Jun–Dec 2026: 9 campaigns, 2 integrated funnels, 9 key audiences, and a seasonal content calendar |
 
-### Google Ads Strategy — In Review
+*Google Ads Strategy — In Review
 
 To access each of the deliverables:
 
