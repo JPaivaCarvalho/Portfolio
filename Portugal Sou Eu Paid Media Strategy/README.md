@@ -131,7 +131,7 @@ Dedicated Google Ads reporting section featuring:
 
 
 
-![Google Ads Overview](assets/dashboard-gads-overview.png)
+![Google Ads Overview](https://i.imgur.com/4uzUuF1.png)
 *March 2026: 1,186 impressions, 63 clicks, 5.31% CTR, €51.08 investment, 1 conversion at €51.08 CPA.*
 
 ![Campaign Detail Tables](https://i.imgur.com/RnwrwGO.png)
