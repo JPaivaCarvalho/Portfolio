@@ -1,6 +1,5 @@
 # 🎯 Media Strategy & Analytics — National Certification Program
-
-> **Role:** Digital Consultant · Paid Media & Analytics  
+ 
 > **Industry:** B2B · Institutional / Trade Association  
 > **Market:** Portugal  
 > **Duration:** Q1 2026 (ongoing)  
