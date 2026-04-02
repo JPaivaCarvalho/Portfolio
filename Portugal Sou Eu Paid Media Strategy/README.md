@@ -66,7 +66,7 @@ The Google Ads account was structured around three active Search campaigns using
 - National brand ("Made in Portugal") messaging
 - Trust & certification stamp messaging
 
-<details>
+
 
 ![Google Ads Campaigns Overview](https://i.imgur.com/68MPZXs.jpeg)
 *Campaign-level view showing budget allocation, interaction rates, and optimization scores across active campaigns.*
@@ -74,7 +74,7 @@ The Google Ads account was structured around three active Search campaigns using
 ![Google Ads Ad Groups](https://i.imgur.com/aQPMwr0.png)
 *Ad group breakdown with interaction rates ranging from 1.53% to 26.47% across thematic groups.*
 
-</details>
+
 
 ### Ongoing Optimizations
 
@@ -108,7 +108,7 @@ Multi-page dashboard covering:
 - **Page-Level Analysis** — Landing page and page visit performance tables
 - **User Characteristics** — Total, active, daily, and monthly active user metrics
 
-<details>
+
 
 ![Traffic Overview](https://i.imgur.com/68MPZXs.jpeg)
 *March 2026: 1,215 sessions (+17.5%), 69.05% interaction rate (-10.4%), 642 total users (+23.2%).*
@@ -119,7 +119,7 @@ Multi-page dashboard covering:
 ![Page & User Analysis](https://i.imgur.com/TiQ2Nk2.png)
 *Top landing pages and visited pages with session counts. 638 active users, 16,199 monthly active users.*
 
-</details>
+
 
 #### 🟡 Google Ads Performance (Ads Data Source)
 
@@ -129,7 +129,7 @@ Dedicated Google Ads reporting section featuring:
 - **Chronological Evolution** — Annual and monthly investment vs. conversions and investment vs. clicks charts
 - **Device Segmentation** — Investment and conversion performance by device type
 
-<details>
+
 
 ![Google Ads Overview](assets/dashboard-gads-overview.png)
 *March 2026: 1,186 impressions, 63 clicks, 5.31% CTR, €51.08 investment, 1 conversion at €51.08 CPA.*
@@ -140,7 +140,7 @@ Dedicated Google Ads reporting section featuring:
 ![Investment Evolution](https://i.imgur.com/wVeJ2Qi.png)
 *Monthly and annual investment vs. clicks/conversions trend charts showing ramp-up phase.*
 
-</details>
+
 
 ---
 
