@@ -68,7 +68,6 @@ The Google Ads account was structured around three active Search campaigns using
 - Trust & certification stamp messaging
 
 <details>
-<summary>📸 Google Ads — Campaign & Ad Group Views</summary>
 
 ![Google Ads Campaigns Overview](https://i.imgur.com/68MPZXs.jpeg)
 *Campaign-level view showing budget allocation, interaction rates, and optimization scores across active campaigns.*
@@ -111,7 +110,6 @@ Multi-page dashboard covering:
 - **User Characteristics** — Total, active, daily, and monthly active user metrics
 
 <details>
-<summary>📸 GA4 Dashboard — Traffic & Channel Performance</summary>
 
 ![Traffic Overview](https://i.imgur.com/68MPZXs.jpeg)
 *March 2026: 1,215 sessions (+17.5%), 69.05% interaction rate (-10.4%), 642 total users (+23.2%).*
@@ -133,7 +131,6 @@ Dedicated Google Ads reporting section featuring:
 - **Device Segmentation** — Investment and conversion performance by device type
 
 <details>
-<summary>📸 Google Ads Dashboard Pages</summary>
 
 ![Google Ads Overview](assets/dashboard-gads-overview.png)
 *March 2026: 1,186 impressions, 63 clicks, 5.31% CTR, €51.08 investment, 1 conversion at €51.08 CPA.*
