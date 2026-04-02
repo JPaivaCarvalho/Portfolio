@@ -1,7 +1,6 @@
 # 🎯 Media Strategy & Analytics — National Certification Program
 
 > **Role:** Digital Consultant · Paid Media & Analytics  
-> **Agency:** [Incubeta](https://www.incubeta.com/)  
 > **Industry:** B2B · Institutional / Trade Association  
 > **Market:** Portugal  
 > **Duration:** Q1 2026 (ongoing)  
