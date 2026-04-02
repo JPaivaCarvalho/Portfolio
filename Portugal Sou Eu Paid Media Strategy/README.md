@@ -70,10 +70,10 @@ The Google Ads account was structured around three active Search campaigns using
 <details>
 <summary>📸 Google Ads — Campaign & Ad Group Views</summary>
 
-![Google Ads Campaigns Overview](assets/google-ads-campaigns.png)
+![Google Ads Campaigns Overview](https://i.imgur.com/68MPZXs.jpeg)
 *Campaign-level view showing budget allocation, interaction rates, and optimization scores across active campaigns.*
 
-![Google Ads Ad Groups](assets/google-ads-adgroups.png)
+![Google Ads Ad Groups](https://i.imgur.com/aQPMwr0.png)
 *Ad group breakdown with interaction rates ranging from 1.53% to 26.47% across thematic groups.*
 
 </details>
@@ -113,16 +113,13 @@ Multi-page dashboard covering:
 <details>
 <summary>📸 GA4 Dashboard — Traffic & Channel Performance</summary>
 
-![Dashboard Cover](assets/dashboard-cover.png)
-*Branded dashboard landing page with GA4 and Incubeta co-branding.*
-
-![Traffic Overview](assets/dashboard-traffic.png)
+![Traffic Overview](https://i.imgur.com/68MPZXs.jpeg)
 *March 2026: 1,215 sessions (+17.5%), 69.05% interaction rate (-10.4%), 642 total users (+23.2%).*
 
-![Channel Performance](assets/dashboard-channels.png)
+![Channel Performance](https://i.imgur.com/68MPZXs.jpeg)
 *Performance by channel with sessions, users, interaction rate, conversions, and time-on-site metrics. Direct (606 sessions) and Organic Search (470 sessions) lead traffic.*
 
-![Page & User Analysis](assets/dashboard-pages-users.png)
+![Page & User Analysis](https://i.imgur.com/TiQ2Nk2.png)
 *Top landing pages and visited pages with session counts. 638 active users, 16,199 monthly active users.*
 
 </details>
@@ -141,10 +138,10 @@ Dedicated Google Ads reporting section featuring:
 ![Google Ads Overview](assets/dashboard-gads-overview.png)
 *March 2026: 1,186 impressions, 63 clicks, 5.31% CTR, €51.08 investment, 1 conversion at €51.08 CPA.*
 
-![Campaign Detail Tables](assets/dashboard-gads-campaigns.png)
+![Campaign Detail Tables](https://i.imgur.com/RnwrwGO.png)
 *Campaign and ad group level reporting with investment, impressions, clicks, CTR, CPC, and conversion data.*
 
-![Investment Evolution](assets/dashboard-gads-evolution.png)
+![Investment Evolution](https://i.imgur.com/wVeJ2Qi.png)
 *Monthly and annual investment vs. clicks/conversions trend charts showing ramp-up phase.*
 
 </details>
