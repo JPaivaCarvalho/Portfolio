@@ -112,7 +112,7 @@ Multi-page dashboard covering:
 
 
 
-![Traffic Overview](https://i.imgur.com/68MPZXs.jpeg)
+![Traffic Overview](https://i.imgur.com/uj7qutw.png)
 
 *March 2026: 1,215 sessions (+17.5%), 69.05% interaction rate (-10.4%), 642 total users (+23.2%).*
 
@@ -137,12 +137,15 @@ Dedicated Google Ads reporting section featuring:
 
 
 ![Google Ads Overview](https://i.imgur.com/5v8s5sw.png)
+
 *March 2026: 1,186 impressions, 63 clicks, 5.31% CTR, €51.08 investment, 1 conversion at €51.08 CPA.*
 
 ![Campaign Detail Tables](https://i.imgur.com/RnwrwGO.png)
+
 *Campaign and ad group level reporting with investment, impressions, clicks, CTR, CPC, and conversion data.*
 
 ![Investment Evolution](https://i.imgur.com/wVeJ2Qi.png)
+
 *Monthly and annual investment vs. clicks/conversions trend charts showing ramp-up phase.*
 
 
