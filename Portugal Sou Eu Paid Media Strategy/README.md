@@ -89,14 +89,90 @@ Campaign management included iterative optimization documented in a structured l
 
 ---
 
-## 📊 Analytics & Dashboards
-
-### GA4 Implementation
-
-- Full GA4 tracking setup via Google Tag Manager
-- Conversion tracking for form submissions (lead generation)
-- Event tracking for micro-conversions (scroll depth, partial form fills, page engagement)
-- Channel grouping aligned with paid media taxonomy
+## 📊 Analytics, Tracking & Measurement
+ 
+### Google Tag Manager — Container Architecture
+ 
+A GTM container was implemented as the central tag management layer, coordinating all tracking across GA4, Google Ads, Meta Pixel, and LinkedIn Insight. The container manages 36+ tags organized across three main platforms:
+ 
+**Tags fired on page load:**
+- GA4 SETUP (Google Tag — base configuration)
+- Google Analytics Universal Analytics (legacy, pre-existing)
+- Google Ads Conversion Tracking (PageView event)
+- Meta Pageview Tracking (Custom HTML)
+- LinkedIn Insight Tag
+ 
+**Tags fired on user interaction (custom events):**
+- GA4 Event tags: `contact_us`, `file_download`, `generate_lead`, `login`, `social_link_click`, `start_form`
+- Google Ads Conversion tags mirroring each GA4 event for cross-platform attribution
+- Consent-based firing rules aligned with CMP (Consent Management Platform)
+ 
+The container includes a full consent initialization sequence (Consent Initialization → Container Loaded → History Change → Set → Consent Default → Consent Update), ensuring GDPR-compliant tag firing based on user opt-in categories: functional, performance, statistics, and marketing.
+ 
+![GTM Tag Assistant — Tags Fired Summary](gtm-tag-assistant.png)
+*Tag Assistant preview showing 5 tags fired on page load across GA4, Google Ads, Meta, and LinkedIn, with consent-aware firing sequence on the left panel.*
+ 
+![GTM Workspace — Full Tag Inventory](gtm-workspace-tags.png)
+*GTM workspace showing the complete tag inventory: GA4 events, Google Ads conversion tracking mirrors, Meta Pixel, and legacy tags.*
+ 
+### dataLayer Specification
+ 
+A structured `dataLayer` was designed and documented in a measurement plan, serving as the bridge between the website's front-end and GTM. Each user action pushes a specific event with associated parameters:
+ 
+| dataLayer Event | Conversion? | Trigger | Parameters |
+|---|---|---|---|
+| `page_view` | No | Page Load | `user_id` |
+| `generate_lead` | **Yes** | Form submission (full registration) | `type`, `services` |
+| `start_form` | No | User begins filling the form | `type` |
+| `contact_us` | No | Contact form submission | — |
+| `login` | No | Successful login | `method` |
+| `file_download` | **Yes** | Simulator download click | — |
+| `social_link_click` | No | Social media link click | `method` |
+ 
+**Variable definitions** used across the dataLayer:
+ 
+| Variable | Type | Source | Description | Example Values |
+|---|---|---|---|---|
+| `method` | string | HTML | Login method or social network | `"E-mail"`, `"Google"`, `"Facebook"` |
+| `type` | string | HTML | Type of lead action | `"registration"` |
+| `services` | string | HTML | Areas of interest selected in form | User-selected services |
+ 
+The dataLayer push is declared **before** the GTM library loads (`gtm.js` event), ensuring all variables are available when tags fire. QA was performed on each event with pass/fail status tracked in the measurement plan.
+ 
+### GA4 Property Configuration
+ 
+The GA4 property was configured with the following specifications:
+ 
+- **Data Stream:** Web (single stream)
+- **Timezone:** Portugal (GMT+00:00)
+- **Currency:** EUR (€)
+- **Enhanced Measurement:** Enabled — scrolls, outbound clicks, site search, video engagement, file downloads, and history-based page changes all active. Form interactions disabled (handled via custom dataLayer events for finer control).
+- **Cross-domain tracking:** Configured via Google Tag settings
+ 
+### Conversion Tracking Pipeline
+ 
+A three-layer conversion tracking architecture ensures data flows correctly from user action to reporting:
+ 
+```
+User Action → dataLayer.push() → GTM Trigger → GA4 Event Tag
+                                              → Google Ads Conversion Tag
+                                              → Meta Pixel Event (where applicable)
+```
+ 
+Each conversion event has a dedicated Google Ads conversion action with unique Conversion ID and Label pairs, enabling accurate attribution in Google Ads reporting. The primary conversion (`generate_lead`) tracks completed B2B registrations, while secondary conversions (`file_download`, `start_form`) provide supporting signals for Smart Bidding optimization.
+ 
+### UTM & Campaign Naming Convention
+ 
+A standardized UTM structure was implemented for clean attribution in GA4:
+ 
+```
+?utm_source={platform}&utm_medium=cpc&utm_campaign={campaign_name}&utm_id={campaign_id}
+```
+ 
+- **Google Ads:** `utm_source=gads`
+- **Meta Ads:** `utm_source=meta`
+- **Campaign naming:** `ClientName_CampaignType_KeywordType_CampaignName_GoalType`
+ 
 
 ### Looker Studio — Custom Reporting Dashboard
 
@@ -174,14 +250,17 @@ Dedicated Google Ads reporting section featuring:
 ---
 
 ## 🛠️ Tech Stack
-
+ 
 | Layer | Tools |
 |---|---|
 | **Paid Media** | Google Ads (Search + PMax), Meta Ads |
-| **Tracking** | Google Tag Manager, GA4 |
-| **Reporting** | Looker Studio (custom dashboards) |
+| **Tag Management** | Google Tag Manager (36+ tags, consent-aware firing) |
+| **Analytics** | GA4 (custom events + Enhanced Measurement), dataLayer architecture |
+| **Conversion Tracking** | GA4 Events, Google Ads Conversion Tags, Meta Pixel |
+| **Reporting** | Looker Studio (custom multi-page dashboards) |
 | **Campaign Management** | Google Ads Editor, structured optimization log |
-| **Attribution** | UTM framework, GA4 channel groupings |
+| **Attribution** | UTM framework, GA4 channel groupings, cross-platform conversion pipeline |
+| **Compliance** | CMP integration, consent-based tag firing (GDPR) |
 
 ---
 
@@ -195,14 +274,19 @@ Dedicated Google Ads reporting section featuring:
 
 4. **Broad match + AI bidding is a viable cold-start strategy** — In a niche B2B market with limited search volume, broad match keywords with Maximize Conversions bidding allowed the algorithm to explore and learn without excessive manual keyword management.
 
+5. **A measurement plan is the foundation** — Documenting every dataLayer event, variable, conversion action, and QA status in a structured spreadsheet before implementation prevented tracking gaps and enabled systematic cross-platform attribution from day one.
+
 ---
 
 ## 📎 Project Artefacts
 
 - Media Strategy Brief & Channel Allocation
+- Measurement Plan (dataLayer specs, GA4 configuration, conversion tracking codes, UTM structure)
 - Campaign Template (keyword matrix, ad copy, UTM structure)
 - Google Ads account setup & campaign architecture
-- GA4 tracking implementation (GTM)
+- GTM container setup (36+ tags, consent-aware architecture)
+- GA4 tracking implementation with custom dataLayer events
+- Google Ads & Meta Pixel conversion tracking pipeline
 - Looker Studio dashboard (GA4 + Google Ads data sources)
 - Optimization log with documented changes and rationale
 
