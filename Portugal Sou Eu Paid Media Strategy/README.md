@@ -1,4 +1,4 @@
-# 🎯 Media Strategy & Analytics — National Certification Program
+# 🎯 Media Strategy & Analytics — National Production Accreditation Program
  
 > **Industry:** B2B · Institutional / Trade Association  
 > **Market:** Portugal  
