@@ -1,4 +1,4 @@
-# Performance Dashboard - Digital Assistant Tool For electrical installation projects
+# Performance Dashboard - Digital Assistant Tool For Electrical Installation Brand
 ### Looker Studio + Google BigQuery | Data Source Migration
 
 ---
