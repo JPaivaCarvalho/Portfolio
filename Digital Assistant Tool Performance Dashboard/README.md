@@ -5,7 +5,7 @@
 
 ## 📋 Project Overview
 
-This project involved the development and implementation of a comprehensive performance dashboard for a digital tool designed mainly for electricians and electrical installers. available on mobile platforms (iOS and Android) and desktop (Windows and macOS). The dashboard was built using **Google Looker Studio** and **Google BigQuery** as the primary data source, enabling real-time visualisation of critical business metrics and user behaviour.
+This project involved the development and implementation of a comprehensive performance dashboard for a digital tool designed mainly for electricians and electrical installers, available on mobile platforms (iOS and Android) and desktop (Windows and macOS). The dashboard was built using **Google Looker Studio** and **Google BigQuery** as the primary data source, enabling real-time visualisation of critical business metrics and user behaviour.
 
 **Client Context:**
 - **Sector:** Technology / Digital Applications
@@ -106,7 +106,7 @@ The dashboard implements a comprehensive set of metrics organised into three mai
 
 ### Dashboard 1: Global Overview — Key Metrics
 
-![Dashboard Global Overview](Screenshot%202026-04-03%20at%2013.37.45.png)
+![Dashboard Global Overview](https://i.imgur.com/JnwtmdT.png)
 
 **Features:**
 - Main KPIs in highlighted cards at the top
@@ -119,7 +119,7 @@ The dashboard implements a comprehensive set of metrics organised into three mai
 
 ### Dashboard 2: Users & Sessions Analysis
 
-![Dashboard Users and Sessions](Screenshot%202026-04-03%20at%2013.38.16.png)
+![Dashboard Users and Sessions](https://i.imgur.com/75WR8Pn.png)
 
 **Features:**
 - Authenticated vs non-authenticated user breakdown
@@ -132,7 +132,7 @@ The dashboard implements a comprehensive set of metrics organised into three mai
 
 ### Dashboard 3: Market / Basket Transfer Value
 
-![Dashboard Market](Screenshot%202026-04-03%20at%2013.38.39.png)
+![Dashboard Market](https://i.imgur.com/tre6CMp.png)
 
 **Features:**
 - Rolling 12-month data: See Shopping List, Export Shopping List, Order Online
@@ -145,41 +145,33 @@ The dashboard implements a comprehensive set of metrics organised into three mai
 
 ### BigQuery — Events Table (SQL Query)
 
-![BigQuery Events Query](Screenshot%202026-04-03%20at%2013.40.03.png)
+![BigQuery Events Query](https://i.imgur.com/ll3q6bF.png)
 
-SQL query used to create the `Hager_Ready_Mobile_data_eventos` table, partitioned by `event_date`, aggregating event parameters and user properties from the raw GA4 export.
+SQL query used to create the `Mobile_data_eventos` table, partitioned by `event_date`, aggregating event parameters and user properties from the raw GA4 export.
 
 ---
 
 ### BigQuery — Sessions Table (SQL Query)
 
-![BigQuery Sessions Query](Screenshot%202026-04-03%20at%2013.40.17.png)
+![BigQuery Sessions Query](https://i.imgur.com/RFKdzzC.png)
 
-SQL query used to create the `Hager_Ready_Mobile_data_sessoes` table, partitioned by `date`, reconstructing sessions from raw events with custom logic for best `user_id` selection, session duration, and engagement metrics.
+SQL query used to create the `Mobile_data_sessoes` table, partitioned by `date`, reconstructing sessions from raw events with custom logic for best `user_id` selection, session duration, and engagement metrics.
 
 ---
 
 ### BigQuery — Events Table Preview
 
-![BigQuery Events Table Preview](Screenshot%202026-04-03%20at%2013.41.23.png)
+![BigQuery Events Table Preview](https://i.imgur.com/YmaWs4H.png)
 
-Preview of the `Hager_Ready_Mobile_data_eventos` table in BigQuery, showing columns such as `session_id`, `app_language`, `data_package_language`, `active_user`, `traffic_source`, and `traffic_medium`.
+Preview of the `Mobile_data_eventos` table in BigQuery, showing columns such as `session_id`, `app_language`, `data_package_language`, `active_user`, `traffic_source`, and `traffic_medium`.
 
 ---
 
 ### BigQuery — Sessions Table Preview
 
-![BigQuery Sessions Table Preview](Screenshot%202026-04-03%20at%2013.41.53.png)
+![BigQuery Sessions Table Preview](https://i.imgur.com/4J2a6ZL.png)
 
-Preview of the `Hager_Ready_Mobile_data_sessoes` partitioned table in BigQuery, showing columns such as `date`, `user_id`, `user_pseudo_id`, `session_id`, `session`, `session_start`, and `session_end`.
-
----
-
-### BigQuery — Zoomed Events Table Preview
-
-![BigQuery Events Table Preview Zoomed](Screenshot%202026-04-03%20at%2013.41.15.png)
-
-Zoomed-in view of the events table preview, highlighting the `session_id`, `app_language`, `data_package_language`, `active_user`, `traffic_source`, and `traffic_medium` columns.
+Preview of the `Mobile_data_sessoes` partitioned table in BigQuery, showing columns such as `date`, `user_id`, `user_pseudo_id`, `session_id`, `session`, `session_start`, and `session_end`.
 
 ---
 
@@ -190,14 +182,7 @@ Zoomed-in view of the events table preview, highlighting the `session_id`, `app_
 - **Google BigQuery**: Data warehouse and SQL query processing
 - **Google Looker Studio**: Visualisation and dashboarding platform
 - **Google Analytics 4 (GA4)**: Event tracking and user behaviour
-- **BigQuery ML** (future exploration): Potential for predictive models
 
-### **Languages & Skills**
-
-- **SQL**: Complex queries, CTEs, window functions, aggregations
-- **Data Modelling**: Fact and dimension table structuring
-- **Data Visualisation**: Dashboard design, data analysis UX/UI
-- **Google Cloud Platform (GCP)**: Resource and permissions management
 
 ### **Sample SQL Queries**
 
@@ -233,56 +218,6 @@ ORDER BY users DESC;
 
 ---
 
-## 🚧 Technical Challenges & Solutions
-
-### **Challenge 1: Google Analytics Token Expiration**
-
-**Problem:** OAuth tokens for the GA connector in Looker Studio expired frequently, causing dashboard failures.
-
-**Solution:** Full migration to BigQuery as the data source, eliminating dependency on real-time OAuth authentication in Looker Studio.
-
----
-
-### **Challenge 2: Calculation Differences Between GA and BigQuery**
-
-**Problem:** Metrics calculated in BigQuery showed small discrepancies compared to the GA interface.
-
-**Solution:**
-- In-depth analysis of GA4 documentation on metric definitions
-- Implementation of calculation logic aligned with GA methodology
-- Documentation of expected and acceptable differences
-- Cross-validation with data samples
-
----
-
-### **Challenge 3: Query Performance at Large Volumes**
-
-**Problem:** Initial queries took too long to execute and generated high processing costs.
-
-**Solution:**
-- Table partitioning by date (`_TABLE_SUFFIX`)
-- Clustering on frequently filtered columns
-- Creation of pre-calculated aggregated tables for daily metrics
-- Caching implementation in Looker Studio
-
----
-
-### **Challenge 4: Fragmented Sessions**
-
-**Problem:** Session definition in BigQuery (based on `ga_session_id`) differs from the GA interface.
-
-**Solution:** Implementation of custom session reconstruction logic using window functions and timeout thresholds.
-
----
-
-## 📈 Results & Impact
-
-### **Technical Impact**
-
-✅ **100% uptime** of the dashboard after migration to BigQuery (vs. ~85% previously)  
-✅ **60% reduction** in visualisation loading time  
-✅ **Zero interruptions** due to authentication issues since migration  
-✅ **Guaranteed scalability** for 10x data volume growth  
 
 ### **Business Impact**
 
@@ -290,12 +225,6 @@ ORDER BY users DESC;
 🎯 **Data-driven decisions**: Identification of usage patterns that informed the product roadmap  
 📱 **Platform insights**: Discovery that desktop users have 45% more engagement than mobile, informing development strategy  
 🔄 **Retention optimisation**: Identification of drop-off points in the user journey that were subsequently optimised  
-
-### **Dashboard Success Metrics**
-
-- **15+ stakeholders** use the dashboard weekly
-- **Average analysis time** reduced from 2h to 15min (report automation)
-- **Data confidence** increased from 6/10 to 9/10 (internal survey)
 
 ---
 
@@ -340,45 +269,9 @@ A "Methodology" section was included in the Looker Studio dashboard itself, expl
 - Data refresh period
 - Known limitations
 
----
 
-## 🎓 Learnings & Evolution
 
-### **Key Takeaways**
 
-1. **Data infrastructure matters**: Investing in a robust data source (BigQuery) pays off in reliability and flexibility
-2. **Documentation is critical**: Differences between data sources must be explicitly documented
-3. **Performance requires optimisation**: Partitioning and pre-calculated aggregations are essential at scale
-4. **User feedback is valuable**: Dashboard iterations based on user feedback improved adoption
-
-### **Next Steps & Future Improvements**
-
-🔮 **Predictive Analytics**: Implement ML models in BigQuery to predict churn  
-🤖 **Automated Alerts**: Set up automatic alerts for anomalies in key metrics  
-📊 **Segmented Dashboards**: Create dashboards specific to each stakeholder persona  
-🔗 **CRM Integration**: Enrich user data with customer success information  
-
----
-
-## 🔗 Links & Resources
-
-- [Google Analytics 4 BigQuery Export Documentation](https://support.google.com/analytics/answer/9358801)
-- [Looker Studio Community Connectors](https://developers.google.com/looker-studio/connector)
-- [BigQuery Best Practices](https://cloud.google.com/bigquery/docs/best-practices)
-
----
-
-## 📬 Contact
-
-Interested in discussing this project or similar collaborations?
-
-**Portfolio:** [Add GitHub link]  
-**LinkedIn:** [Add LinkedIn link]  
-**Email:** [Add professional email]
-
----
-
-*This project demonstrates skills in: Business Intelligence, Data Engineering, SQL, Google Cloud Platform, Data Visualisation, Analytics Implementation, Problem Solving, Technical Documentation*
 
 ---
 
