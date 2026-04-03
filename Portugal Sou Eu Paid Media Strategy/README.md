@@ -67,7 +67,6 @@ The Google Ads account was structured around three active Search campaigns using
 - Trust & certification stamp messaging
 
 
-
 ![Google Ads Campaigns Overview](https://i.imgur.com/4uzUuF1.png)
 
 *Campaign-level view showing budget allocation, interaction rates, and optimization scores across active campaigns.*
@@ -109,10 +108,12 @@ A GTM container was implemented as the central tag management layer, coordinatin
  
 The container includes a full consent initialization sequence (Consent Initialization → Container Loaded → History Change → Set → Consent Default → Consent Update), ensuring GDPR-compliant tag firing based on user opt-in categories: functional, performance, statistics, and marketing.
  
-![GTM Tag Assistant — Tags Fired Summary](gtm-tag-assistant.png)
+![GTM Tag Assistant — Tags Fired Summary](https://i.imgur.com/1sPBceA.png)
+
 *Tag Assistant preview showing 5 tags fired on page load across GA4, Google Ads, Meta, and LinkedIn, with consent-aware firing sequence on the left panel.*
  
-![GTM Workspace — Full Tag Inventory](gtm-workspace-tags.png)
+![GTM Workspace — Full Tag Inventory](https://i.imgur.com/eFElBq0.png)
+
 *GTM workspace showing the complete tag inventory: GA4 events, Google Ads conversion tracking mirrors, Meta Pixel, and legacy tags.*
  
 ### dataLayer Specification
