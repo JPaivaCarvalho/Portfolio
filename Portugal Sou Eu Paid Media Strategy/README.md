@@ -197,7 +197,7 @@ Multi-page dashboard covering:
 
 *Performance by channel with sessions, users, interaction rate, conversions, and time-on-site metrics. Direct (606 sessions) and Organic Search (470 sessions) lead traffic.*
 
-![Page & User Analysis](https://i.imgur.com/TiQ2Nk2.png)
+![Page & User Analysis](https://i.imgur.com/hm1E3mH.png)
 
 *Top landing pages and visited pages with session counts. 638 active users, 16,199 monthly active users.*
 
